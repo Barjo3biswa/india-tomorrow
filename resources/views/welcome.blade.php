@@ -17,7 +17,7 @@
                                         </a>
                                     @else
                                         <a href="#" class="thumb" style="height: 490px;">
-                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{$first_news->youtube_url}}"
+                                            <iframe width="100%" height="100%" class="iframe" src="https://www.youtube.com/embed/{{$first_news->youtube_url}}"
                                                 title="YouTube video player" frameborder="0"
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                 allowfullscreen></iframe>
@@ -51,7 +51,7 @@
                                             </a>
                                         @else
                                             <a href="#" class="thumb">
-                                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
+                                                <iframe width="100%" height="100%" class="iframe" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
                                                     title="YouTube video player" frameborder="0"
                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                     allowfullscreen></iframe>

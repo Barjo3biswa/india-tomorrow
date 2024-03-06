@@ -42,7 +42,7 @@
                                     </a>
                                 @else
                                     <a href="#" class="thumb">
-                                        <iframe width="600" height="300" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
+                                        <iframe width="600" height="300" class="iframe" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             allowfullscreen></iframe>
@@ -74,7 +74,7 @@
                                                     </a>
                                                 @else
                                                     <a href="#" class="thumb">
-                                                        <iframe width="350" height="200" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
+                                                        <iframe width="350" height="200" class="iframe" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
                                                             title="YouTube video player" frameborder="0"
                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                             allowfullscreen></iframe>
@@ -176,7 +176,7 @@
                                                             <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}">
                                                     @else
                                                             <iframe src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                                                title="YouTube video player" frameborder="0"
+                                                                title="YouTube video player" class="iframe" frameborder="0"
                                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                                 allowfullscreen></iframe>
                                                     @endif
@@ -218,7 +218,7 @@
                                                     </a>
                                                 @else
                                                     <a href="#" class="thumb">
-                                                        <iframe class="big-video" src="https://www.youtube.com/embed/{{$other->youtube_url}}"
+                                                        <iframe class="iframe" src="https://www.youtube.com/embed/{{$other->youtube_url}}"
                                                             title="YouTube video player" frameborder="0"
                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                             allowfullscreen></iframe>
@@ -315,7 +315,7 @@
                                                     @else
                                                         <a href="#" class="thumb">
                                                             <iframe src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                                                title="YouTube video player" frameborder="0"
+                                                                title="YouTube video player" class="iframe" frameborder="0"
                                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                                 allowfullscreen></iframe>
                                                         </a>
@@ -391,7 +391,7 @@
                                                     @else
                                                         <a href="#" class="thumb">
                                                             <iframe src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                                                title="YouTube video player" frameborder="0"
+                                                                title="YouTube video player" class="iframe" frameborder="0"
                                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                                 allowfullscreen></iframe>
                                                         </a>
