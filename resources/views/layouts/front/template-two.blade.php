@@ -1,0 +1,79 @@
+<div class="col-md-6 ptop--0 pbottom--30">
+    <div class="post--items-title" data-ajax="tab">
+        <h2 class="h4"><a href="{{route('news.'.$section->slug)}}" class="cat">{{$section->name}}</a></h2>
+
+    </div>
+    <div class="post--items post--items-3" data-ajax-content="outer">
+        <ul class="nav" data-ajax-content="inner">
+            @foreach ($section->contents($section->slug) as $key=>$news)
+            @if ($key==0)
+                <li>
+                    <div class="post--item post--layout-1">
+                        <div class="post--img">
+                            @if ($news->photo_or_video == 'photo')
+                                    <a href="#" class="thumb">
+                                        <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
+                                    </a>
+                            @else
+                                <a href="#" class="thumb">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </a>
+                            @endif
+                            <a href="{{route('news.'.$section->slug)}}" class="cat">{{$section->name}}</a>
+                            <div class="post--info">
+                                <ul class="nav meta">
+                                    <li>
+                                        <a href="#">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
+                                    </li>
+                                </ul>
+                                <div class="title">
+                                    <h3 class="h4">
+                                        <a href="#" class="btn-link">{{$news->news_title}}</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            @else
+                <li>
+                    <div class="post--item post--layout-3">
+                        <div class="post--img">
+                            @if ($news->photo_or_video == 'photo')
+                                <a href="#" class="thumb">
+                                    <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
+                                </a>
+                            @else
+                                <a href="#" class="thumb">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </a>
+                            @endif
+                            <div class="post--info">
+                                <ul class="nav meta">
+                                    <li>
+                                        <a href="#">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
+                                    </li>
+                                </ul>
+                                <div class="title">
+                                    <h3 class="h4">
+                                        <a href="#" class="btn-link">{{$news->news_title}}</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            @endif
+            @endforeach
+        </ul>
+        <div class="preloader bg--color-0--b" data-preloader="1">
+            <div class="preloader--inner"></div>
+        </div>
+    </div>
+</div>

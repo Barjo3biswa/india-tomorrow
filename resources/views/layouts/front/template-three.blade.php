@@ -1,0 +1,83 @@
+<div class="col-md-12 ptop--30 pbottom--30">
+    <div class="post--items-title" data-ajax="tab">
+        <h2 class="h4"><a href="{{route('news.'.$section->slug)}}" class="cat">{{$section->name}}</a></h2>
+    </div>
+    <div class="post--items post--items-2 bg-color" data-ajax-content="outer">
+        <ul class="nav row" data-ajax-content="inner">
+            @foreach ($section->contents($section->slug) as $key=>$news)
+                @if ($key==0)
+                <li class="col-md-6">
+                    <div class="post--item post--layout-2 bg-white">
+                        <div class="post--img">
+                            @if ($news->photo_or_video == 'photo')
+                                <a href="#" class="thumb">
+                                    <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
+                                </a>
+                            @else
+                                <a href="#" class="thumb">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </a>
+                            @endif
+                            <a href="{{route('news.'.$section->slug)}}" class="cat">{{$section->name}}</a>
+                            <div class="post--info" style="height: 110px;">
+                                <div class="title">
+                                    <h3 class="h4">
+                                        <a href="#" class="btn-link">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
+                                    </h3>
+                                    <p>{{$news->news_title}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                @else
+                    @if ($key==1)
+                        <li class="col-md-6">
+                            <ul class="nav row">
+                                <li class="col-xs-12 hidden-md hidden-lg">
+                                    <hr class="divider">
+                                </li>
+                    @endif
+                                <li class="col-xs-6">
+                                    <div class="post--item post--layout-2 bg-white">
+                                        <div class="post--img">
+                                            @if ($news->photo_or_video == 'photo')
+                                                <a href="#" class="thumb thumb-height">
+                                                    <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
+                                                </a>
+                                            @else
+                                                <a href="#" class="thumb thumb-height">
+                                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
+                                                        title="YouTube video player" frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                        allowfullscreen></iframe>
+                                                </a>
+                                            @endif
+                                            <div class="post--info">
+                                                <ul class="nav meta">
+                                                    <li>
+                                                        <a href="#">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="title">
+                                                    <h3 class="h4">
+                                                        <a href="#"
+                                                            class="btn-link">{{$news->news_title}}</a>
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                    @if ($key==($section->contents($section->slug)->count()-1))
+                            </ul>
+                        </li>
+                    @endif
+                @endif
+            @endforeach
+        </ul>
+    </div>
+</div>
