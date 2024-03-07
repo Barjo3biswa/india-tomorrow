@@ -21,7 +21,7 @@ class newsSection extends Model
         $test= newsContent::all()->filter(function($content) use ($slug) {
             $category = $content->setCategory();
             return is_array($category) && in_array($slug, $category);
-        })->sortByDesc('id');
+        })/* ->sortByDesc('id') */;
 
         return $test;
     }
