@@ -20,11 +20,11 @@ class HomepageController extends Controller
                             return is_array($appearance) && in_array('just-in', $appearance);
                         })->take(2);
 
-        $news_section = newsSection::get()->filter(function ($section) {
+        $news_section = newsSection::get()->orderBy('orderby_main')->filter(function ($section) {
                             $appearance = $section->setAppearence();
                             return is_array($appearance) && in_array('main_content', $appearance);
                         });
-        $sub_news_section = newsSection::get()->filter(function ($section) {
+        $sub_news_section = newsSection::get()->orderBy('orderby_sub')->filter(function ($section) {
                             $appearance = $section->setAppearence();
                             return is_array($appearance) && in_array('left_content', $appearance);
                         });
