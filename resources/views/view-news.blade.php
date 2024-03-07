@@ -34,6 +34,7 @@
                                     <div class="sharethis-inline-share-buttons"></div>
                                 </ul>
                             </div>
+                            {{-- <div class="sharethis-inline-share-buttons"></div> --}}
                             <div class="post--img news-details-banner">
                                 @if ($news->photo_or_video == 'photo')
                                     <a href="#" class="thumb">
@@ -425,4 +426,40 @@
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+<script>
+    $(document).ready(function() {
+        $("#news-slider").owlCarousel({
+            items : 3,
+            itemsDesktop:[1199,3],
+            itemsDesktopSmall:[980,2],
+            itemsMobile : [600,1],
+            navigation:true,
+            navigationText:["",""],
+            pagination:true,
+            autoPlay:true
+        });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const sendBtn = document.querySelector('.send-btn');
+    const socialIcons = document.querySelector('.social-icons');
+
+    sendBtn.addEventListener('click', () => {
+        // Toggle the visibility of social icons
+        socialIcons.style.display = socialIcons.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close social icons when clicking outside of them or the send button
+    document.addEventListener('click', (event) => {
+        if (!socialIcons.contains(event.target) && !sendBtn.contains(event.target)) {
+            socialIcons.style.display = 'none';
+        }
+    });
+});
+
+</script>
+
 @endsection

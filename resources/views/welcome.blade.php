@@ -31,7 +31,10 @@
                                         </ul>
                                         <div class="title">
                                             <h2 class="h4">
-                                                <a href="#" class="btn-link">{{$first_news->news_title}}</a>
+                                                @php
+                                                    $cat_array = json_decode($first_news->category);
+                                                @endphp
+                                                <a href="{{route($cat_array[0],[$first_news->news_slug])}}" class="btn-link">{{$first_news->news_title}}</a>
                                             </h2>
                                         </div>
                                     </div>
@@ -66,7 +69,10 @@
                                             </ul>
                                             <div class="title">
                                                 <h2 class="h4">
-                                                    <a href="#" class="btn-link">{{$news->news_title}}</a>
+                                                    @php
+                                                        $cat_array = json_decode($news->category);
+                                                    @endphp
+                                                    <a href="{{route($cat_array[0],[$news->news_slug])}}" class="btn-link">{{$news->news_title}}</a>
                                                 </h2>
                                             </div>
                                         </div>
@@ -188,7 +194,10 @@
                                                         </ul>
                                                         <div class="title">
                                                             <h3 class="h4">
-                                                                <a href="#" class="btn-link">{{$news->news_title}}</a>
+                                                                @php
+                                                                    $cat_array = json_decode($news->category);
+                                                                @endphp
+                                                                <a href="{{route($cat_array[0],[$news->news_slug])}}" class="btn-link">{{$news->news_title}}</a>
                                                             </h3>
                                                         </div>
                                                     </div>

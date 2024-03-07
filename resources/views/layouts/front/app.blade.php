@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="{{ asset('fornt-asset') }}/css/responsive-style.css">
     <link rel="stylesheet" href="{{ asset('fornt-asset') }}/css/colors/theme-color-1.css" id="changeColorScheme">
     <link rel="stylesheet" href="{{ asset('fornt-asset') }}/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=65e96edb9391bf00191aa1aa&product=inline-share-buttons' async='async'></script>    @yield('css')
 </head>
 
 <body>
@@ -131,7 +133,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
     <script src="{{ asset('fornt-asset') }}/js/main.js"></script>
 
-
+@yield('js')
 
 
 </body>

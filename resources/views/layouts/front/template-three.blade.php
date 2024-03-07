@@ -25,7 +25,10 @@
                             <div class="post--info" style="height: 110px;">
                                 <div class="title">
                                     <h3 class="h4">
-                                        <a href="#" class="btn-link">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
+                                        @php
+                                            $cat_array = json_decode($news->category);
+                                        @endphp
+                                        <a href="{{route($cat_array[0],[$news->news_slug])}}" class="btn-link">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
                                     </h3>
                                     <p>{{$news->news_title}}</p>
                                 </div>
@@ -45,7 +48,10 @@
                                     <div class="post--item post--layout-2 bg-white">
                                         <div class="post--img">
                                             @if ($news->photo_or_video == 'photo')
-                                                <a href="#" class="thumb thumb-height">
+                                                @php
+                                                    $cat_array = json_decode($news->category);
+                                                @endphp
+                                                <a href="{{route($cat_array[0],[$news->news_slug])}}" class="thumb thumb-height">
                                                     <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
                                                 </a>
                                             @else
