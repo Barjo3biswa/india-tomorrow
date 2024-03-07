@@ -24,6 +24,9 @@
     .popup_popup {
         display: none !important;
     }
+    #st-cmp-v2{
+        display: none !important;
+    }
     </style>
 </head>
 
