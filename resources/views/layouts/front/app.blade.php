@@ -20,6 +20,11 @@
     <link rel="stylesheet" href="{{ asset('fornt-asset') }}/css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
     <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=65e96edb9391bf00191aa1aa&product=inline-share-buttons' async='async'></script>    @yield('css')
+    <style>
+    .popup_popup {
+        display: none !important;
+    }
+    </style>
 </head>
 
 <body>
