@@ -163,7 +163,7 @@
             <div class="main--sidebar col-md-4 col-sm-5 ptop--30 pbottom--30" data-sticky-content="true">
                 <div class="sticky-content-inner">
                     <div class="widget">
-                        @foreach ($news_section as $section)
+                        @foreach ($sub_news_section as $section)
                             @if ($section->contents($section->slug)->count()>0)
                                 <div class="widget--title">
                                     <h2 class="h4">{{$section->name}}</h2>

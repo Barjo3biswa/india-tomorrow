@@ -15,7 +15,10 @@
     </div>
     <div class="post--items post--items-2" data-ajax-content="outer">
         <ul class="nav row gutter--15" data-ajax-content="inner">
-            @foreach ($section->contents($section->slug) as $key=>$news)
+            {{-- @php
+                $testt = $section->contents($section->slug)->sortByDesc('id');
+            @endphp --}}
+            @foreach ($section->contents($section->slug)->sortByDesc('id') as $key=>$news)
                 @if($key==0)
                     <li class="col-xs-12">
                         <div class="post--item post--layout-1">

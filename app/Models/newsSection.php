@@ -18,10 +18,12 @@ class newsSection extends Model
 
     public function contents($slug)
     {
-        return newsContent::all()->filter(function($content) use ($slug) {
+        $test= newsContent::all()->filter(function($content) use ($slug) {
             $category = $content->setCategory();
             return is_array($category) && in_array($slug, $category);
-        });
+        })->sortByDesc('id');
+
+        return $test;
     }
 
     public function setAppearence()

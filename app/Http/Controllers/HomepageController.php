@@ -14,9 +14,21 @@ class HomepageController extends Controller
         if(!$first_news){
             $first_news = newsContent::orderBy('id','DESC')->first();
         }
-        $second_news = newsContent::whereNot('id',$first_news->id??'')->orderBy('id','DESC')->get()->take(2);
-        $news_section = newsSection::get();
-        return view('welcome',compact('first_news','second_news','news_section'));
+
+        $second_news = newsContent::whereNot('id',$first_news->id??'')->orderBy('id','DESC')->get()->filter(function ($section) {
+                            $appearance = $section->setCategory();
+                            return is_array($appearance) && in_array('just-in', $appearance);
+                        })->take(2);
+
+        $news_section = newsSection::get()->filter(function ($section) {
+                            $appearance = $section->setAppearence();
+                            return is_array($appearance) && in_array('main_content', $appearance);
+                        });
+        $sub_news_section = newsSection::get()->filter(function ($section) {
+                            $appearance = $section->setAppearence();
+                            return is_array($appearance) && in_array('left_content', $appearance);
+                        });
+        return view('welcome',compact('first_news','second_news','news_section','sub_news_section'));
     }
 
     public function viewNews($id){
