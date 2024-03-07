@@ -13,7 +13,7 @@
                                     @if ($first_news->photo_or_video == 'photo')
                                         <a href="#" class="thumb" style="height: 490px;">
                                             <img src="{{asset($first_news->image)}}" alt="{{$first_news->news_slug}}" width="600" height="300">
-                                            <p class="img-caption" style="text-align: left;">{{$first_news->image_caption}}</p>
+                                            {{-- <p class="img-caption" style="text-align: left;">{{$first_news->image_caption}}</p> --}}
                                         </a>
                                     @else
                                         <a href="#" class="thumb" style="height: 490px;">

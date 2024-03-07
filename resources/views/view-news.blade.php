@@ -7,9 +7,12 @@
     </div>
     <nav class="breadcrumbs-nav">
         <ol class="breadcrumbs">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Featured News</a></li>
-          <li class="breadcrumb-item current">Assam Govt Announces Dr. Banikanta Kakati & Anundoram Borooah Awards For Meritorious Students</li>
+            @php
+                $route_name = Route::currentRouteName();
+            @endphp
+          <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
+          <li class="breadcrumb-item current"><a href="{{route('news.'.$route_name)}}">{{ucfirst($route_name)}}</a></li>
+
         </ol>
       </nav>
     @include('layouts.front.scrolling-news')
@@ -113,7 +116,7 @@
                             </a>
                         </div>
 
-                        <div class="post--author-info clearfix">
+                        {{-- <div class="post--author-info clearfix">
                             <div class="comment-block">
                                 <div class="block-header">
                                     <div class="title">
@@ -136,9 +139,7 @@
                                             <button class="btn primary send-btn">Send</button>
                                         </div>
                                     </div>
-                                    <div class="social-icons">
-                                        <!-- Social media icons go here -->
-                                        <!-- Example: -->
+                                    <div class="social-icons">\
                                         <ul class="social-media-send-popup">
                                             <li>
                                                 <a href="#">
@@ -161,7 +162,7 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="post--related ptop--30">
                             <div class="post--items-title" data-ajax="tab">
