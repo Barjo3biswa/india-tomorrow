@@ -8,8 +8,6 @@
             @foreach ($section->contents($section->slug) as $key=>$news)
             @if ($key==($section->contents($section->slug)->count()-1))
                 <li>
-
-
                     <div class="post--item post--layout-1">
                         <div class="post--img">
                             @if ($news->photo_or_video == 'photo')
