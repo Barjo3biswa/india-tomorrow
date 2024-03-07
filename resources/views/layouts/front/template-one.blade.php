@@ -19,7 +19,7 @@
                 $testt = $section->contents($section->slug)->sortByDesc('id');
             @endphp --}}
             @foreach ($section->contents($section->slug)->sortByDesc('id') as $key=>$news)
-                @if($key==0)
+                @if($key==($section->contents($section->slug)->count()-1))
                     <li class="col-xs-12">
                         <div class="post--item post--layout-1">
                             <div class="post--img">
