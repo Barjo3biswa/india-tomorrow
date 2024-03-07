@@ -11,7 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::table('news_sections', function (Blueprint $table) {
+            $table->integer('orderby_main')->nullable()->after('status');
+            $table->integer('orderby_sub')->nullable()->after('status');
+        });
     }
 
     /**
