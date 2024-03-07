@@ -103,21 +103,20 @@
 
                             $serial = 1;
                         @endphp
-                        @foreach ($news_section as /* $key=> */$section)
+                        @foreach ($news_section as $key=>$section)
                             @if ($serial%3==1 && $section->contents($section->slug)->count()>0)
                             @php
                                 $serial = $serial+1;
-                                $key = 0;
                             @endphp
                                 @include('layouts.front.template-one')
                             @elseif($serial%3==2 && $section->contents($section->slug)->count()>0)
                             @php
-                                $serial = $serial+1;$key = 0;
+                                $serial = $serial+1;
                             @endphp
                                 @include('layouts.front.template-two')
                             @elseif($serial%3==0 && $section->contents($section->slug)->count()>0)
                             @php
-                                $serial = $serial+1;$key = 0;
+                                $serial = $serial+1;
                             @endphp
                                     @include('layouts.front.template-three')
                             @endif

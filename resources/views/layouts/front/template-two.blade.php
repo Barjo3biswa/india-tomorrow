@@ -6,7 +6,7 @@
     <div class="post--items post--items-3" data-ajax-content="outer">
         <ul class="nav" data-ajax-content="inner">
             @foreach ($section->contents($section->slug) as $key=>$news)
-            @if ($key==($section->contents($section->slug)->count()-1))
+            @if ($key==0)
                 <li>
                     <div class="post--item post--layout-1">
                         <div class="post--img">
