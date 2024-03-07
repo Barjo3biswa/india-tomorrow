@@ -18,6 +18,8 @@
             {{-- @php
                 $testt = $section->contents($section->slug)->sortByDesc('id');
             @endphp --}}
+
+
             @foreach ($section->contents($section->slug)->sortByDesc('id') as $key=>$news)
                 @if($key==($section->contents($section->slug)->count()-1))
                     <li class="col-xs-12">

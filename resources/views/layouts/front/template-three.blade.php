@@ -5,6 +5,8 @@
     <div class="post--items post--items-2 bg-color" data-ajax-content="outer">
         <ul class="nav row" data-ajax-content="inner">
             @foreach ($section->contents($section->slug) as $key=>$news)
+
+
                 @if ($key==($section->contents($section->slug)->count()-1))
                 <li class="col-md-6">
                     <div class="post--item post--layout-2 bg-white">

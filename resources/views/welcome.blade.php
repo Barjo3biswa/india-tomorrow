@@ -100,6 +100,7 @@
                 <div class="sticky-content-inner news-section-title">
                     <div class="row">
                         @php
+
                             $serial = 1;
                         @endphp
                         @foreach ($news_section as $key=>$section)
