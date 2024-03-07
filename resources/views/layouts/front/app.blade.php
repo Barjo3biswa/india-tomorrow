@@ -53,11 +53,10 @@
                             </div>
                             <div class="about--widget">
                                 <div class="content">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo nobis officia,
-                                        consequatur minima quos architecto cupiditate quod enim! Rerum, velit.</p>
+                                    <p>India Tomorrow is a education news portel which focus only on catering education updates of NorthEast and India...</p>
                                 </div>
                                 <div class="action">
-                                    <a href="#" class="btn-link">Read More<i
+                                    <a href="{{route('about-us')}}" class="btn-link">Read More<i
                                             class="fa flm fa-angle-double-right"></i></a>
                                 </div>
                                 <ul class="nav">

@@ -7,8 +7,17 @@
     </div>
     <nav class="breadcrumbs-nav">
         <ol class="breadcrumbs">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item current"><a href="#">Featured News</a></li>
+            @php
+                $route_name = Route::currentRouteName();
+                $route_array = explode('.', $route_name);
+            @endphp
+            @foreach ($route_array as $route)
+                @if($route == "news")
+                    <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
+                @else
+                    <li class="breadcrumb-item current"><a href="{{route('news.'.$route)}}">{{ucfirst($route)}}</a></li>
+                @endif
+            @endforeach
         </ol>
     </nav>
     <div class="main-content--section pbottom--30">

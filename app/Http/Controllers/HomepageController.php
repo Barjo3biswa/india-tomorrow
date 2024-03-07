@@ -37,4 +37,9 @@ class HomepageController extends Controller
         $trending = newsContent::get();
         return view('view-all-news', compact('all_news','slug','related_news','featured_news','trending'));
     }
+
+
+    public function aboutUs(){
+        return view('about-us');
+    }
 }

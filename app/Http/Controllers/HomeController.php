@@ -167,9 +167,9 @@ class HomeController extends Controller
     }
 
     public function saveNews(Request $request){
-        if($request->image == null || $request->youtube_url == null){
-            return redirect()->back()->with('error','Provide Photo or Video for this News');
-        }
+        // if($request->image == null || $request->youtube_url == null){
+        //     return redirect()->back()->with('error','Provide Photo or Video for this News');
+        // }
         $path = null;
         if($request->editable_id){
             $path = newsContent::where('id',$request->editable_id)->first()->image;
