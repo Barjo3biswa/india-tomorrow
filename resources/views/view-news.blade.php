@@ -121,7 +121,7 @@
                                     </div>
                                 </div>
                                 <div class="writing" onclick="this.focus()">
-                                    <div contenteditable="true" class="textarea" autofocus spellcheck="false">
+                                    <div contenteditable="true" class="textarea" spellcheck="false">
                                         <p><a class="tagged-user">@IndiaTomorrow</a></p>
                                     </div>
                                     <div class="footer">
