@@ -71,12 +71,12 @@
                     </div>
                 </div>
                 <div class="main--content col-md-6 col-sm-7" data-sticky-content="true">
-                    <div class="sticky-content-inner">
+                    <div class="sticky-content-inner news-listing">
                         @foreach ($all_news as $news)
                         <div class="post--items post--items-5 pd--30-0 section-bxs">
                             <ul class="nav">
 
-                                <li>
+                                <li class="li">
                                     <div class="post--item post--title-larger">
                                         <div class="row">
                                             <div class="col-md-4 col-sm-12 col-xs-4 col-xxs-12">
