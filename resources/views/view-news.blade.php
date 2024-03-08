@@ -189,14 +189,17 @@
                                                 </div>
                                                 <div class="post-content">
                                                     <h3 class="post-title">
-                                                    <a href="#">{{$like->news_title}}</a>
+                                                        @php
+                                                            $cat_array = json_decode($like->category);
+                                                        @endphp
+                                                        <a href="{{route($cat_array[0],[$like->news_slug])}}">{{$like->news_title}}</a>
                                                     </h3>
                                                     <p class="post-description">{!!text_rank($like->description)!!}</p>
                                                     <span class="post-date"><i class="fa fa-clock-o"></i>{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</span>
-                                                    @php
+                                                    {{-- @php
                                                         $cat_array = json_decode($like->category);
                                                     @endphp
-                                                    <a href="{{route($cat_array[0],[$like->news_slug])}}" class="read-more">read more</a>
+                                                    <a href="{{route($cat_array[0],[$like->news_slug])}}" class="read-more">read more</a> --}}
                                                 </div>
                                             </div>
                                         @endforeach
@@ -240,7 +243,11 @@
                                                     </ul>
                                                     <div class="title">
                                                         <h3 class="h4">
-                                                            <a href="#" class="btn-link">{{$other->news_title}}</a>
+
+                                                            @php
+                                                                $cat_array = json_decode($other->category);
+                                                            @endphp
+                                                            <a href="{{route($cat_array[0],[$other->news_slug])}}"class="btn-link">{{$other->news_title}}</a>
                                                         </h3>
                                                     </div>
                                                 </div>
@@ -248,12 +255,12 @@
                                             <div class="post--content">
                                                 <p>{!!text_rank($other->description)!!}</p>
                                             </div>
-                                            <div class="post--action">
+                                            {{-- <div class="post--action">
                                                 @php
                                                     $cat_array = json_decode($other->category);
                                                 @endphp
                                                 <a href="{{route($cat_array[0],[$other->news_slug])}}">Continue Reading... </a>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </li>
                                     @endforeach
@@ -333,7 +340,10 @@
                                                         </ul>
                                                         <div class="title">
                                                             <h3 class="h4">
-                                                                <a href="#" class="btn-link">{{$news->news_title}} </a>
+                                                                @php
+                                                                    $cat_array = json_decode($news->category);
+                                                                @endphp
+                                                                <a href="{{route($cat_array[0],[$other->news_slug])}}" class="btn-link">{{$news->news_title}} </a>
                                                             </h3>
                                                         </div>
                                                     </div>
