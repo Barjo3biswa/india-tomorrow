@@ -59,7 +59,7 @@
                                         <label for="vehicle2"> Sub Menu</label><br>
                                         <input type="checkbox" id="vehicle3" name="appearence[]" value="main_content" @if(isset($record) && $appearence_array) {{in_array('main_content',$appearence_array)?'checked':''}} @endif>
                                         <label for="vehicle2"> Homepage Main Content</label><br>
-                                        <input type="checkbox" id="vehicle3" name="appearence[]" value="left_content" @if(isset($record) && $appearence_array) {{in_array('left_content',$appearence_array)?'checked':''}} @endif>
+                                        <input type="checkbox" id="vehicle3" name="appearence[]" value="left_content" @if(isset($record) && $appearence_array) {{in_array('top',$appearence_array)?'checked':''}} @endif>
                                         <label for="vehicle2"> Homepage Left Content</label><br>
                                     </div>
                                     <button type="submit" class="btn app-btn-primary">Save Changes</button>

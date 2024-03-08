@@ -110,9 +110,11 @@
                                                         </h3>
                                                     </div>
                                                 </div>
+                                                @if($slug != 'interview')
                                                 <div class="post--content">
                                                     <p>{!!text_rank($news->description)!!}...</p>
                                                 </div>
+                                                @endif
                                                 {{-- <div class="post--action">
                                                     <a href="{{route($slug,[$news->news_slug])}}">Continue Reading...</a>
                                                 </div> --}}
