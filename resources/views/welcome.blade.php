@@ -10,10 +10,10 @@
                         <div class="post--item post--layout-1 post--title-larger" style="height: 490px;">
                             <div class="post--img" style="height: 490px;">
                                 @if ($first_news)
-                                    @if ($first_news->photo_or_video == 'photo')
+                                    {{-- @if ($first_news->photo_or_video == 'photo')
                                         <a href="#" class="thumb" style="height: 490px;">
                                             <img src="{{asset($first_news->image)}}" alt="{{$first_news->news_slug}}" width="600" height="300">
-                                            {{-- <p class="img-caption" style="text-align: left;">{{$first_news->image_caption}}</p> --}}
+
                                         </a>
                                     @else
                                         <a href="#" class="thumb" style="height: 490px;">
@@ -22,7 +22,8 @@
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                 allowfullscreen></iframe>
                                         </a>
-                                    @endif
+                                    @endif --}}
+                                    @include('layouts.front.image-video-show', $news = $first_news)
                                     <div class="post--info">
                                         <ul class="nav meta">
                                             <li>
@@ -48,7 +49,7 @@
                             <div class="col-xs-6 col-xss-12">
                                 <div class="post--item post--layout-1 post--title-large post--item--1">
                                     <div class="post--img">
-                                        @if ($news->photo_or_video == 'photo')
+                                        {{-- @if ($news->photo_or_video == 'photo')
                                             <a href="#" class="thumb">
                                                 <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
                                             </a>
@@ -59,7 +60,8 @@
                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                     allowfullscreen></iframe>
                                             </a>
-                                        @endif
+                                        @endif --}}
+                                        @include('layouts.front.image-video-show', $news = $news)
                                         <a href="#" class="cat">Educational</a>
                                         <div class="post--info">
                                             <ul class="nav meta">

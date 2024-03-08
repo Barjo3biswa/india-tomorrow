@@ -39,7 +39,7 @@
                             </div>
                             {{-- <div class="sharethis-inline-share-buttons"></div> --}}
                             <div class="post--img news-details-banner">
-                                @if ($news->photo_or_video == 'photo')
+                                {{-- @if ($news->photo_or_video == 'photo')
                                     <a href="#" class="thumb">
                                         <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
                                         <p class="img-caption" style="text-align: left;">{{$news->image_caption}}</p>
@@ -51,7 +51,8 @@
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             allowfullscreen></iframe>
                                     </a>
-                                @endif
+                                @endif --}}
+                                @include('layouts.front.image-video-show', $news = $news)
                             </div>
                             <div class="post--content">
                                 @php
@@ -174,14 +175,15 @@
                                         @foreach ($might_like as $like)
                                             <div class="post-slide">
                                                 <div class="post-img">
-                                                    @if ($news->photo_or_video == 'photo')
+                                                    {{-- @if ($news->photo_or_video == 'photo')
                                                             <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}">
                                                     @else
                                                             <iframe src="https://www.youtube.com/embed/{{$news->youtube_url}}"
                                                                 title="YouTube video player" class="iframe" frameborder="0"
                                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                                 allowfullscreen></iframe>
-                                                    @endif
+                                                    @endif --}}
+                                                    @include('layouts.front.image-video-show', $news = $like)
                                                     {{-- <img src="{{asset($like->image)}}" alt=""> --}}
                                                     <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
                                                 </div>
@@ -214,7 +216,7 @@
                                     <li class="col-sm-6 pbottom--30">
                                         <div class="post--item post--layout-1">
                                             <div class="post--img">
-                                                @if ($other->photo_or_video == 'photo')
+                                                {{-- @if ($other->photo_or_video == 'photo')
                                                     <a href="#" class="thumb">
                                                         <img src="{{asset($other->image)}}" alt="{{$other->news_slug}}">
                                                     </a>
@@ -225,7 +227,8 @@
                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                             allowfullscreen></iframe>
                                                     </a>
-                                                @endif
+                                                @endif --}}
+                                                @include('layouts.front.image-video-show', $news = $other)
                                                 <a href="#" class="cat">APSC Exam</a>
                                                 </a>
                                                 <div class="post--info">
