@@ -80,11 +80,11 @@
                                 @endif --}}
                                 @include('layouts.front.image-video-show', $news = $news)
                                 <div class="post--info">
-                                    <ul class="nav meta">
+                                    {{-- <ul class="nav meta">
                                         <li>
                                             <a href="#">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                     <div class="title">
                                         <h3 class="h4">
                                             @php
