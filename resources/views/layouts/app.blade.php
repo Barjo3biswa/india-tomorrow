@@ -159,7 +159,7 @@
                                 </div>
                             </div> --}}
                             <div class="app-utility-item">
-                                <a href="settings.html" title="Settings">
+                                <a href="#" title="Settings">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-gear icon"
                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"

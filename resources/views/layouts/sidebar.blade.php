@@ -81,7 +81,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="help.html">
+            <a class="nav-link" href="#">
                 <span class="nav-icon">
                     <svg width="1em" height="1em" viewBox="0 0 16 16"
                         class="bi bi-question-circle" fill="currentColor"

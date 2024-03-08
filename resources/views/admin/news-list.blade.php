@@ -57,7 +57,7 @@
                                                                 @endphp
                                                                 <td>
                                                                     @foreach ($category as $cat)
-                                                                        {{$cat}}
+                                                                    <span class="badge bg-secondary">{{$cat}}</span>
                                                                     @endforeach
                                                                 </td>
                                                                 <td>@include('admin.common.status')</td>
