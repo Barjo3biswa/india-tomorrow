@@ -94,21 +94,20 @@
                             </div>
                         </div>
                         <div class="post--tags">
+                            @php
+                                $hastags = json_decode($news->hashtags)??[];
+                            @endphp
                             <ul class="nav">
                               <li>
                                 <span>
                                   <i class="fa fa-tags"></i>
                                 </span>
                               </li>
-                              <li>
-                                <a href="#">Dr. Banikanta Kakati</a>
-                              </li>
-                              <li>
-                                <a href="#">Anundoram Borooah</a>
-                              </li>
-                              <li>
-                                <a href="#">Assam Govt</a>
-                              </li>
+                                @foreach ($hastags as $tags)
+                                    <li>
+                                        <a href="#">{{$tags}}</a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="ad--space pd--20-0-40">

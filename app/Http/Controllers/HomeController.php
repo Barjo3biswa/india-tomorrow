@@ -167,8 +167,12 @@ class HomeController extends Controller
     }
 
     public function saveNews(Request $request){
+
         if($request->image == null && $request->youtube_url == null){
-            return redirect()->back()->with('error','Provide Photo or Video for this News');
+            return redirect()->back()->with('error','Provide Photo or Video for this News')->withInput();;
+        }
+        if($request->hashtags == null ){
+            return redirect()->back()->with('error','Please provide Hashtags')->withInput();;
         }
         $path = null;
         if($request->editable_id){
@@ -189,6 +193,12 @@ class HomeController extends Controller
         if($count > 0 ){
             $slug = $slug.$count+1;
         }
+        $hastagg = $request->hashtags;
+        $hastagg = trim($hastagg);
+        $hashtags_array = explode(' ', $hastagg);
+        $hashtags_array = array_filter($hashtags_array);
+        $json_result = json_encode($hashtags_array);
+
         $data=[
             "news_title" => $request->news_title,
             'news_slug' => $slug,
@@ -200,6 +210,7 @@ class HomeController extends Controller
             "news_time" => $request->news_time,
             "reported_by" => $request->reported_by,
             "image" => $path,
+            "hashtags" => $json_result,
         ];
         if(!$request->editable_id){
             $inserted = newsContent::create($data);
@@ -251,6 +262,7 @@ class HomeController extends Controller
     }
 
     public function settingsStore(Request $request){
+
         $validate = newsContent::where('id',$request->settings_id)->first();
         if($request['photo_or_video']=="video" && $validate->youtube_url==null){
             return response(['error' => 'Can`t set video as this news downt have a video.']);

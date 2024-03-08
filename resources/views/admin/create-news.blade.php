@@ -19,7 +19,9 @@
                         <h1 class="app-page-title">Add News</h1>
                    </div>
                    <div class="col-md-6">
-                        <h6 style="float: right;"><a href="{{route('home')}}">Home</a> / Add News</h6>
+                        <h6 style="float: right;"><a href="{{route('home')}}">Home</a> /
+                            <a href="{{route('admin.news')}}">News List</a> /
+                            Add News</h6>
                    </div>
                 </div>
                 <hr class="mb-4">
@@ -37,6 +39,8 @@
                                         <input type="text" class="form-control" name="news_title" placeholder="Type Here"
                                         @if (isset($record))
                                             value="{{$record->news_title}}"
+                                        @else
+                                            Value="{{old('news_title')}}"
                                         @endif required>
                                     </div>
 
@@ -45,7 +49,9 @@
                                         <input type="text" class="form-control" name="news_sub_title" placeholder="Type Here"
                                         @if (isset($record))
                                             value="{{$record->news_sub_title}}"
-                                        @endif required>
+                                        @else
+                                            Value="{{old('news_sub_title')}}"
+                                        @endif>
                                     </div>
 
                                     <div class="row">
@@ -69,6 +75,8 @@
                                         <input type="text" class="form-control" name="image_caption" placeholder="Type Here"
                                         @if (isset($record))
                                             value="{{$record->image_caption}}"
+                                        @else
+                                            Value="{{old('image_caption')}}"
                                         @endif>
                                     </div>
 
@@ -78,6 +86,8 @@
                                             <input type="text" class="form-control" name="youtube_url" placeholder="Type Here"
                                             @if (isset($record->youtube_url))
                                                 value="{{$record->youtube_url}}"
+                                            @else
+                                                Value="{{old('youtube_url')}}"
                                             @endif>
                                         </div>
                                         @if (isset($record->youtube_url))
@@ -92,6 +102,8 @@
                                         <textarea class="form-control" id="description" name="description">
                                             @if (isset($record))
                                                 {!!$record->description!!}
+                                            @else
+                                                {{old('description')}}
                                             @endif
                                         </textarea>
                                     </div>
@@ -102,6 +114,8 @@
                                             <input type="date" class="form-control" name="news_date"
                                             @if (isset($record))
                                                 value="{{date('Y-m-d', strtotime($record->news_date))}}"
+                                            @else
+                                                Value="{{old('news_date')}}"
                                             @endif required>
                                         </div>
                                         <div class="col-md-6">
@@ -109,6 +123,8 @@
                                             <input type="time" class="form-control" name="news_time"
                                             @if (isset($record))
                                                 value="{{$record->news_time}}"
+                                            @else
+                                                Value="{{old('time')}}"
                                             @endif required>
                                         </div>
                                     </div>
@@ -119,9 +135,27 @@
                                             <input type="text" class="form-control" name="reported_by" placeholder="Type Here"
                                             @if (isset($record))
                                                 value="{{$record->reported_by}}"
+                                            @else
+                                                Value="{{old('reported_by')}}"
                                             @endif required>
                                         </div>
                                     </div><br/>
+
+                                    <div class="row">
+                                        @php
+                                            if(isset($record)){
+                                                $hastags = json_decode($record->hashtags)??[];
+                                            }
+                                        @endphp
+                                        <div class="col-md-12">
+                                            <label for="setting-input-2" class="form-label">Add Hashtags (Don't use any special characters except #, -, and _)</label>
+                                            <textarea class="form-control" id="hashtags" name="hashtags" rows="4" cols="50" required>@if (isset($record))@foreach ($hastags as $tags){{$tags}} &nbsp;@endforeach @else{{old('hashtags')}}@endif </textarea>
+                                            {{-- <input type="text" class="form-control" name="hashtags" placeholder="Type Here"> --}}
+                                            {{-- @if (isset($record))
+                                                value="{{$record->reported_by}}"
+                                            @endif required> --}}
+                                        </div>
+                                    </div>
 
                                     <div class="mb-3" style="text-align: center;">
                                         <button type="submit" class="btn app-btn-primary">Save as Draft</button>
@@ -246,6 +280,14 @@ $(".settings").change(function(e){
             },
         });
 })
+
+document.getElementById('hashtags').addEventListener('keypress', function(event) {
+    const allowedCharacters = /[a-zA-Z0-9#_\-\s]/;
+    const key = event.key;
+    if (!allowedCharacters.test(key)) {
+        event.preventDefault();
+    }
+});
 </script>
 
 @endsection
