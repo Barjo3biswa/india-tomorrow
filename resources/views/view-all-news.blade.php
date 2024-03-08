@@ -112,7 +112,7 @@
                                                 </div>
                                                 @if($slug != 'interview')
                                                 <div class="post--content">
-                                                    <p>{!!text_rank($news->description)!!}...</p>
+                                                    <p>{!!text_rank($news->description)!!}... {{$slug}}</p>
                                                 </div>
                                                 @endif
                                                 {{-- <div class="post--action">
