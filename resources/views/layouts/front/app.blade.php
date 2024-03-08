@@ -109,7 +109,7 @@
                             </div>
                             <div class="links--widget">
                                 <ul class="nav">
-                                    <li><a href="#" class="fa-angle-right">About Us</a></li>
+                                    <li><a href="{{route('about-us')}}" class="fa-angle-right">About Us</a></li>
                                     <li><a href="#" class="fa-angle-right">Contact Us</a></li>
                                     <li><a href="#" class="fa-angle-right">Write to Us</a></li>
                                 </ul>

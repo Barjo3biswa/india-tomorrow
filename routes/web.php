@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/', [App\Http\Controllers\HomepageController::class, 'index'])->name('index');
-$news_section = newsSection::get();
+$news_section = newsSection::withTrashed()->get();
 foreach($news_section as $section){
     Route::get($section->slug.'/{news}', [App\Http\Controllers\HomepageController::class, 'viewNews'])->name($section->slug);
 }
