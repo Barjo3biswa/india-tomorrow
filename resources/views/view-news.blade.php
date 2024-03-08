@@ -282,7 +282,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="widget">
+                        {{-- <div class="widget">
                             <div class="widget--title">
                                 <h2 class="h4">Get Newsletter</h2>
                                 <i class="icon fa fa-envelope-open-o"></i>
@@ -308,7 +308,7 @@
                                     <div class="status"></div>
                                 </form>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="widget">
                             <div class="widget--title">
                                 <h2 class="h4">Featured News</h2>
