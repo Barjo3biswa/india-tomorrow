@@ -15,8 +15,11 @@
     </div>
     <div class="post--items post--items-2" data-ajax-content="outer">
         <ul class="nav row gutter--15" data-ajax-content="inner">
+            @php
+                $key1 = 0;
+            @endphp
             @foreach ($section->contents($section->slug) as $key=>$news)
-                @if($key==0)
+                @if($key1==0)
                     <li class="col-xs-12">
                         <div class="post--item post--layout-1">
                             <div class="post--img">
@@ -93,6 +96,9 @@
                         </div>
                     </li>
                 @endif
+                @php
+                    $key1=$key1+1;
+                @endphp
             @endforeach
         </ul>
     </div>

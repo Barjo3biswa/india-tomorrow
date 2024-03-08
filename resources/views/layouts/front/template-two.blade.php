@@ -5,8 +5,11 @@
     </div>
     <div class="post--items post--items-3" data-ajax-content="outer">
         <ul class="nav" data-ajax-content="inner">
+            @php
+                $key2 = 0;
+            @endphp
             @foreach ($section->contents($section->slug) as $key=>$news)
-            @if ($key==0)
+            @if ($key2==0)
                 <li>
                     <div class="post--item post--layout-1">
                         <div class="post--img">
@@ -76,6 +79,9 @@
                     </div>
                 </li>
             @endif
+            @php
+                $key2 = $key2+1;
+            @endphp
             @endforeach
         </ul>
         <div class="preloader bg--color-0--b" data-preloader="1">
