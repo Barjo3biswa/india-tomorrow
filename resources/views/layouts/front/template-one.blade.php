@@ -39,14 +39,14 @@
                                 <a href="{{route('news.'.$section->slug)}}" class="cat">{{$section->name}}</a>
 
                                 <div class="post--info">
-                                    <ul class="nav meta">
+                                    {{-- <ul class="nav meta">
                                         <li>
                                             <a href="#">Reported By: {{$news->reported_by}}</a>
                                         </li>
                                         <li>
                                             <a href="#">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                     <div class="title">
                                         <h3 class="h4">
                                             @php
