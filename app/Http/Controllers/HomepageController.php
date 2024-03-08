@@ -34,9 +34,15 @@ class HomepageController extends Controller
     public function viewNews($id){
         $news = newsContent::where('news_slug',$id)->first();
         $might_like = newsContent::whereNot('news_slug',$id)->get();
-        $other_news = newsContent::get();
-        $featured_news = newsContent::get();
-        $trending = newsContent::get();
+        $other_news = newsContent::get()->take(2);
+        $featured_news = newsContent::get()->filter(function ($section) {
+                                            $appearance = $section->setCategory();
+                                            return is_array($appearance) && in_array('featured', $appearance);
+                                        })->take(2);
+        $trending = newsContent::get()->filter(function ($section) {
+                                    $appearance = $section->setCategory();
+                                    return is_array($appearance) && in_array('just-in', $appearance);
+                                })->take(2);
         return view('view-news', compact('news','might_like','other_news','featured_news','trending'));
     }
 
@@ -44,9 +50,18 @@ class HomepageController extends Controller
         $routeName = Route::currentRouteName();
         $slug = str_replace("news.", "", $routeName);
         $all_news = newsContent::where('category', 'like', '%' . $slug . '%')->get();
-        $related_news = newsContent::get();
-        $featured_news = newsContent::get();
-        $trending = newsContent::get();
+        $related_news = newsContent::orderBy('id','DESC')->get()->filter(function ($section) {
+            $appearance = $section->setCategory();
+            return is_array($appearance) && in_array('just-in', $appearance);
+        })->take('3');
+        $featured_news = newsContent::orderBy('id','DESC')->get()->filter(function ($section) {
+            $appearance = $section->setCategory();
+            return is_array($appearance) && in_array('featured', $appearance);
+        })->take('3');
+        $trending = newsContent::orderBy('id','DESC')->get()->filter(function ($section) {
+            $appearance = $section->setCategory();
+            return is_array($appearance) && in_array('just-in', $appearance);
+        })->take('3');
         return view('view-all-news', compact('all_news','slug','related_news','featured_news','trending'));
     }
 
