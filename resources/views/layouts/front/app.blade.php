@@ -76,13 +76,13 @@
                             </div>
                             <div class="links--widget">
                                 <ul class="nav">
-                                    <li><a href="#" class="fa-angle-right">Link 1</a></li>
-                                    <li><a href="#" class="fa-angle-right">Link 2</a></li>
-                                    <li><a href="#" class="fa-angle-right">Link 3</a></li>
-                                    <li><a href="#" class="fa-angle-right">Link 4</a></li>
-                                    <li><a href="#" class="fa-angle-right">Link 5</a></li>
-                                    <li><a href="#" class="fa-angle-right">Link 6</a></li>
-                                    <li><a href="#" class="fa-angle-right">Link 7</a></li>
+                                    <li><a href="#" class="fa-angle-right">UGC</a></li>
+                                    <li><a href="#" class="fa-angle-right">USTM</a></li>
+                                    <li><a href="#" class="fa-angle-right">Gauhati University</a></li>
+                                    <li><a href="#" class="fa-angle-right">Tezpur University</a></li>
+                                    <li><a href="#" class="fa-angle-right">Cotton University</a></li>
+                                    <li><a href="#" class="fa-angle-right">Dibrugarh University</a></li>
+                                    <li><a href="#" class="fa-angle-right">NEHU</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -94,10 +94,10 @@
                             </div>
                             <div class="links--widget">
                                 <ul class="nav">
-                                    <li><a href="#" class="fa-angle-right">Categories 1</a></li>
-                                    <li><a href="#" class="fa-angle-right">Categories 2</a></li>
-                                    <li><a href="#" class="fa-angle-right">Categories 3</a></li>
-                                    <li><a href="#" class="fa-angle-right">Categories 4</a></li>
+                                    <li><a href="{{route('news.just-in')}}" class="fa-angle-right">Just In</a></li>
+                                    <li><a href="{{route('news.featured')}}" class="fa-angle-right">Featured</a></li>
+                                    <li><a href="#" class="fa-angle-right">Trending</a></li>
+                                    <li><a href="#" class="fa-angle-right">Most Read</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -105,14 +105,13 @@
                     <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
                         <div class="widget">
                             <div class="widget--title">
-                                <h2 class="h4">TRENDING TOPICS</h2>
+                                {{-- <h2 class="h4">TRENDING TOPICS</h2> --}}
                             </div>
                             <div class="links--widget">
                                 <ul class="nav">
-                                    <li><a href="#" class="fa-angle-right">Trending Topic</a></li>
-                                    <li><a href="#" class="fa-angle-right">Trending Topics</a></li>
-                                    <li><a href="#" class="fa-angle-right">Trending Topics</a></li>
-                                    <li><a href="#" class="fa-angle-right">Trending Topics</a></li>
+                                    <li><a href="#" class="fa-angle-right">About Us</a></li>
+                                    <li><a href="#" class="fa-angle-right">Contact Us</a></li>
+                                    <li><a href="#" class="fa-angle-right">Write to Us</a></li>
                                 </ul>
                             </div>
                         </div>

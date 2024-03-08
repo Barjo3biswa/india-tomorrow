@@ -60,7 +60,7 @@ class HomepageController extends Controller
         })->take('3');
         $trending = newsContent::orderBy('id','DESC')->get()->filter(function ($section) {
             $appearance = $section->setCategory();
-            return is_array($appearance) && in_array('just-in', $appearance);
+            return is_array($appearance) && in_array('trending', $appearance);
         })->take('3');
         return view('view-all-news', compact('all_news','slug','related_news','featured_news','trending'));
     }

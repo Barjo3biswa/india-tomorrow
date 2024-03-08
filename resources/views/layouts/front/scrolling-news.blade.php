@@ -1,6 +1,6 @@
 @php
     use App\Models\newsContent;
-    $scrolling_news = newsContent::where('status','Published')->whereNotNull('category')->get();
+    $scrolling_news = newsContent::where('status','Published')->where('scrolling','true')->whereNotNull('category')->get();
 @endphp
 
 <div class="news--ticker">

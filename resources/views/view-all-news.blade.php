@@ -94,14 +94,14 @@
                                                         </a>
                                                     @endif --}}
                                                     @include('layouts.front.image-video-show', $news = $news)
-                                                    <a href="#" class="cat">News</a>
+                                                    {{-- <a href="{{route($slug,[$news->news_slug])}}" class="cat">News</a> --}}
                                                 </div>
                                             </div>
                                             <div class="col-md-8 col-sm-12 col-xs-8 col-xxs-12">
                                                 <div class="post--info">
                                                     <ul class="nav meta">
                                                         <li>
-                                                            <a href="#">Edited by {{$news->reported_by}} | {{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
+                                                            <a href="{{route($slug,[$news->news_slug])}}">{{$news->reported_by}} | {{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
                                                         </li>
                                                     </ul>
                                                     <div class="title">
@@ -113,9 +113,9 @@
                                                 <div class="post--content">
                                                     <p>{!!text_rank($news->description)!!}...</p>
                                                 </div>
-                                                <div class="post--action">
+                                                {{-- <div class="post--action">
                                                     <a href="{{route($slug,[$news->news_slug])}}">Continue Reading...</a>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>

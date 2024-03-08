@@ -62,7 +62,7 @@
                                             </a>
                                         @endif --}}
                                         @include('layouts.front.image-video-show', $news = $news)
-                                        <a href="#" class="cat">Educational</a>
+                                        <a href="#" class="cat">Just In</a>
                                         <div class="post--info">
                                             <ul class="nav meta">
                                                 <li>
