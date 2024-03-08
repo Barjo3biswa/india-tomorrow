@@ -13,7 +13,7 @@
                 <li>
                     <div class="post--item post--layout-1">
                         <div class="post--img">
-                            @if ($news->photo_or_video == 'photo')
+                            {{-- @if ($news->photo_or_video == 'photo')
                                     <a href="#" class="thumb">
                                         <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
                                     </a>
@@ -24,7 +24,8 @@
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowfullscreen></iframe>
                                 </a>
-                            @endif
+                            @endif --}}
+                            @include('layouts.front.image-video-show', $testing = $news)
                             <a href="{{route('news.'.$section->slug)}}" class="cat">{{$section->name}}</a>
                             <div class="post--info">
                                 <ul class="nav meta">
@@ -48,7 +49,7 @@
                 <li>
                     <div class="post--item post--layout-3">
                         <div class="post--img">
-                            @if ($news->photo_or_video == 'photo')
+                            {{-- @if ($news->photo_or_video == 'photo')
                                 <a href="#" class="thumb">
                                     <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
                                 </a>
@@ -59,7 +60,8 @@
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowfullscreen></iframe>
                                 </a>
-                            @endif
+                            @endif --}}
+                            @include('layouts.front.image-video-show', $news = $news)
                             <div class="post--info">
                                 <ul class="nav meta">
                                     <li>
