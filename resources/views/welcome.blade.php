@@ -1,8 +1,8 @@
 @extends('layouts.front.app')
 @section('content')
-@include('layouts.front.scrolling-news')
 <div class="main-content--section pbottom--30">
-    <div class="container-fluid">
+    <div class="container">
+        @include('layouts.front.scrolling-news')
         <div class="main--content">
             <div class="post--items post--items-1 pd--30-0">
                 <div class="row gutter--15">
@@ -82,7 +82,7 @@
                                 </div>
                             </div>
                             @endforeach
-                            <div class="col-sm-12 hidden-sm hidden-xs">
+                            {{-- <div class="col-sm-12 hidden-sm hidden-xs">
                                 <div class="post--item post--layout-1 post--title-larger post--item--2">
                                     <div class="post--img">
                                         <a href="#" class="thumb">
@@ -91,7 +91,7 @@
                                         <a href="#" class="cat">ADVERTISEMENT</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -130,20 +130,30 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="post--item post--layout-1 post--type-video post--title-large" style="height: 208px;">
-                                            <div class="post--img" style="height: 208px;">
-                                                <a href="https://youtu.be/JBWjdtIfRag?si=5XNPWBLBRL-UY3z2" class="thumb" style="height: 208px;">
+                                    <div class="col-lg-4">
+                                        <div class="post--item post--layout-1 post--type-video post--title-large" style="height: 350px;">
+                                            <div class="post--img" style="height: 350px;">
+                                                <a href="https://youtu.be/JBWjdtIfRag?si=5XNPWBLBRL-UY3z2" class="thumb" style="height: 350px;">
                                                     <iframe style="width: 100%;height: 100%;" src="https://www.youtube.com/embed/JBWjdtIfRag?si=5XNPWBLBRL-UY3z2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                                 </a>
                                                 <a href="#" class="cat">Live News Video</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <div class="post--item post--layout-1 post--type-video post--title-large" style="height: 208px;">
-                                            <div class="post--img" style="height: 208px;">
-                                                <a href="https://i.ytimg.com/vi/UZMHqRQOjCs/maxresdefault.jpg" class="thumb" style="height: 208px;">
+                                    <div class="col-lg-4">
+                                        <div class="post--item post--layout-1 post--type-video post--title-large" style="height: 350px;">
+                                            <div class="post--img" style="height: 350px;">
+                                                <a href="https://i.ytimg.com/vi/UZMHqRQOjCs/maxresdefault.jpg" class="thumb" style="height: 350px;">
+                                                    <img src="https://i.ytimg.com/vi/UZMHqRQOjCs/maxresdefault.jpg" alt="" style="width: 100%;height: 100%;">
+                                                </a>
+                                                <a href="#" class="cat">Live News Video</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="post--item post--layout-1 post--type-video post--title-large" style="height: 350px;">
+                                            <div class="post--img" style="height: 350px;">
+                                                <a href="https://i.ytimg.com/vi/UZMHqRQOjCs/maxresdefault.jpg" class="thumb" style="height: 350px;">
                                                     <img src="https://i.ytimg.com/vi/UZMHqRQOjCs/maxresdefault.jpg" alt="" style="width: 100%;height: 100%;">
                                                 </a>
                                                 <a href="#" class="cat">Live News Video</a>

@@ -12,18 +12,6 @@
                 <li class="col-md-6">
                     <div class="post--item post--layout-2 bg-white">
                         <div class="post--img">
-                            {{-- @if ($news->photo_or_video == 'photo')
-                                <a href="#" class="thumb">
-                                    <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
-                                </a>
-                            @else
-                                <a href="#" class="thumb">
-                                    <iframe width="100%" height="100%" class="iframe" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                        title="YouTube video player" frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowfullscreen></iframe>
-                                </a>
-                            @endif --}}
                             @include('layouts.front.image-video-show', $news = $news)
                             <a href="{{route('news.'.$section->slug)}}" class="cat">{{$section->name}}</a>
                             <div class="post--info" style="height: 110px;">
@@ -32,7 +20,7 @@
                                         @php
                                             $cat_array = json_decode($news->category);
                                         @endphp
-                                        <a href="{{route($cat_array[0],[$news->news_slug])}}" class="btn-link">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
+                                        <a href="{{route($cat_array[0],[$news->news_slug])}}" class="btn-link">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}{{$key3}}</a>
                                     </h3>
                                     <p>{{$news->news_title}}</p>
                                 </div>
@@ -41,31 +29,17 @@
                     </div>
                 </li>
                 @else
-                    @if ($key==1)
+                    @if ($key3==1)
+                    {{-- {{dump("open")}} --}}
                         <li class="col-md-6">
                             <ul class="nav row">
                                 <li class="col-xs-12 hidden-md hidden-lg">
                                     <hr class="divider">
                                 </li>
                     @endif
-                                <li class="col-xs-6">
-                                    <div class="post--item post--layout-2 bg-white">
+                                <li class="col-xs-6 just-in-li-p">
+                                    <div class="post--item post--layout-2 bg-white just-in-sm-img">
                                         <div class="post--img">
-                                            {{-- @if ($news->photo_or_video == 'photo')
-                                                @php
-                                                    $cat_array = json_decode($news->category);
-                                                @endphp
-                                                <a href="{{route($cat_array[0],[$news->news_slug])}}" class="thumb thumb-height">
-                                                    <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
-                                                </a>
-                                            @else
-                                                <a href="#" class="thumb thumb-height">
-                                                    <iframe width="100%" height="100%" class="iframe" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                                        title="YouTube video player" frameborder="0"
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                        allowfullscreen></iframe>
-                                                </a>
-                                            @endif --}}
                                             @include('layouts.front.image-video-show', $news = $news)
                                             <div class="post--info">
                                                 <ul class="nav meta">
@@ -82,8 +56,13 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <hr class="divider">
                                 </li>
-                    @if ($key==($section->contents($section->slug)->count()-1))
+                                {{-- <li class="col-xs-12">
+                                    <hr class="divider">
+                                </li> --}}
+                    @if ($key3==($section->contents($section->slug)->count()-1))
+                    {{-- {{dump("closed")}} --}}
                             </ul>
                         </li>
                     @endif

@@ -4009,7 +4009,7 @@ body {
     margin: 0;
     color: #222;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 14px;
     font-weight: 700;
   }
   .post--item.post--layout-1 .post--info .title .h4 {
@@ -6372,4 +6372,11 @@ body {
 .news-listing .post--items .nav .li{
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   padding: 14px;}
+  .just-in-sm-img a.thumb {height: 78px;}
+  .just-in-li-p {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .just-in-li-p div.post--item {
+  min-height: 142px;}
   /* New style end */

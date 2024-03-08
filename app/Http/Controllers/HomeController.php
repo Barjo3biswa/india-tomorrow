@@ -168,7 +168,7 @@ class HomeController extends Controller
 
     public function saveNews(Request $request){
 
-        if($request->image == null && $request->youtube_url == null){
+        if(!$request->editable_id && $request->image == null && $request->youtube_url == null){
             return redirect()->back()->with('error','Provide Photo or Video for this News')->withInput();;
         }
         if($request->hashtags == null ){

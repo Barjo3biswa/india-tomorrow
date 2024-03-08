@@ -1,5 +1,6 @@
 @extends('layouts.front.app')
 @section('content')
+<div class="container">
     <div class="ad--space pd--20-0-20" style="padding-top: 2rem;">
         <a href="#">
             <img src="img/ads-img/ad-728x90-02.jpg" alt="" class="center-block" data-rjs="2">
@@ -438,6 +439,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
 @section('js')

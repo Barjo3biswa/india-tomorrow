@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('fornt-asset') }}/css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
     <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=65e96edb9391bf00191aa1aa&product=inline-share-buttons' async='async'></script>    @yield('css')
+
     <style>
     .popup_popup {
         display: none !important;
@@ -123,6 +124,12 @@
     <div id="backToTop">
         <a href="#"><i class="fa fa-angle-double-up"></i></a>
     </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" id="video">
+            </div>
+        </div>
+    </div>
     <script src="{{ asset('fornt-asset') }}/js/jquery-3.2.1.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/bootstrap.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/jquery.sticky.min.js"></script>
@@ -141,7 +148,16 @@
 
 @yield('js')
 
+<script>
+    function myfunction(id){
+        var html = `<iframe width="100%" height="315" src="https://www.youtube.com/embed/`+id+`"
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>`;
+        $("#video").empty();
+        $("#video").append(html);
+    }
 
+</script>
 </body>
 
 

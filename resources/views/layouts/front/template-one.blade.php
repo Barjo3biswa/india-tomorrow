@@ -1,14 +1,12 @@
 <div class="col-md-6 ptop--0 pbottom--30">
     <div class="post--items-title" data-ajax="tab">
-        <h2 class="h4"><a href="{{route('news.'.$section->slug)}}" class="cat">{{$section->name}}</a></h2>
+        <h2 class="h4"><a href="{{ route('news.' . $section->slug) }}" class="cat">{{ $section->name }}</a></h2>
         <div class="nav">
-            <a href="#" class="prev btn-link"
-                data-ajax-action="load_prev_world_news_posts">
+            <a href="#" class="prev btn-link" data-ajax-action="load_prev_world_news_posts">
                 <i class="fa fa-long-arrow-left"></i>
             </a>
             <span class="divider">/</span>
-            <a href="#" class="next btn-link"
-                data-ajax-action="load_next_world_news_posts">
+            <a href="#" class="next btn-link" data-ajax-action="load_next_world_news_posts">
                 <i class="fa fa-long-arrow-right"></i>
             </a>
         </div>
@@ -18,8 +16,8 @@
             @php
                 $key1 = 0;
             @endphp
-            @foreach ($section->contents($section->slug) as $key=>$news)
-                @if($key1==0)
+            @foreach ($section->contents($section->slug) as $key => $news)
+                @if ($key1 == 0)
                     <li class="col-xs-12">
                         <div class="post--item post--layout-1">
                             <div class="post--img">
@@ -36,15 +34,16 @@
                                     </a>
                                 @endif --}}
                                 @include('layouts.front.image-video-show', $news = $news)
-                                <a href="{{route('news.'.$section->slug)}}" class="cat">{{$section->name}}</a>
+                                <a href="{{ route('news.' . $section->slug) }}" class="cat">{{ $section->name }}</a>
 
                                 <div class="post--info">
                                     <ul class="nav meta">
                                         <li>
-                                            <a href="#">Reported By: {{$news->reported_by}}</a>
+                                            <a href="#">Reported By: {{ $news->reported_by }}</a>
                                         </li>
                                         <li>
-                                            <a href="#">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
+                                            <a href="#">{{ date('d-M-Y', strtotime($news->news_date)) }},
+                                                {{ date('h:i A', strtotime($news->news_time)) }}</a>
                                         </li>
                                     </ul>
                                     <div class="title">
@@ -52,7 +51,8 @@
                                             @php
                                                 $cat_array = json_decode($news->category);
                                             @endphp
-                                            <a href="{{route($cat_array[0],[$news->news_slug])}}"class="btn-link">{{$news->news_title}}</a>
+                                            <a
+                                                href="{{ route($cat_array[0], [$news->news_slug]) }}"class="btn-link">{{ $news->news_title }}</a>
                                         </h3>
                                     </div>
                                 </div>
@@ -90,7 +90,8 @@
                                             @php
                                                 $cat_array = json_decode($news->category);
                                             @endphp
-                                            <a href="{{route($cat_array[0],[$news->news_slug])}}" class="btn-link">{{$news->news_title}}</a>
+                                            <a href="{{ route($cat_array[0], [$news->news_slug]) }}"
+                                                class="btn-link">{{ $news->news_title }}</a>
                                         </h3>
                                     </div>
                                 </div>
@@ -99,9 +100,16 @@
                     </li>
                 @endif
                 @php
-                    $key1=$key1+1;
+                    $key1 = $key1 + 1;
                 @endphp
             @endforeach
         </ul>
     </div>
 </div>
+
+
+
+
+
+
+

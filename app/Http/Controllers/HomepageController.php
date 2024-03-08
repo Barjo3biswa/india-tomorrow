@@ -18,7 +18,7 @@ class HomepageController extends Controller
         $second_news = newsContent::whereNot('id',$first_news->id??'')->orderBy('id','DESC')->get()->filter(function ($section) {
                             $appearance = $section->setCategory();
                             return is_array($appearance) && in_array('just-in', $appearance);
-                        })->take(2);
+                        })->take(4);
 
         $news_section = newsSection::orderBy('orderby_main')->get()->filter(function ($section) {
                             $appearance = $section->setAppearence();
