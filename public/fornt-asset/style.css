@@ -2770,7 +2770,7 @@ body {
     margin-bottom: 0;
   }
   .header--topbar {
-    padding: 13px 0 6px;
+    padding: 6px 0 6px;
     color: #999;
     font-size: 0;
     line-height: 0;
@@ -2784,7 +2784,8 @@ body {
   }
   .header--topbar .nav {
     display: inline-block;
-    margin: 0 -10px 7px 15px;
+    /* margin: 0 -10px 7px 15px; */
+    margin: 0 -10px 0px 15px;
     padding-left: 5px;
     border-left: 1px solid #555;
     font-size: 14px;
@@ -2843,6 +2844,7 @@ body {
   .header--logo {
     font-size: 0;
     line-height: 0;
+    max-width: 150px;
   }
   .header--logo .h1 {
     display: inline-block;
@@ -4009,7 +4011,7 @@ body {
     margin: 0;
     color: #222;
     font-size: 14px;
-    line-height: 14px;
+    line-height: 18px;
     font-weight: 700;
   }
   .post--item.post--layout-1 .post--info .title .h4 {
@@ -5859,13 +5861,13 @@ body {
   /* New style start */
   .header--ad {width: 45%;height: 60px;}
   .header--ad img {height: 100%;width: 100%;object-fit: cover;}
-  .post--item--1 {height:208px;}
-  .post--item--1 .post--img {height: 208px;}
-  .post--item--1 .thumb {height: 208px;}
+  .post--item--1 {height: 194px;}
+  .post--item--1 .post--img {height: 194px;}
+  .post--item--1 .thumb {height: 192px;}
   .post--item--1 .thumb img {height:100%;object-fit: cover;}
-  .post--item--2 {height: 266px;}
-  .post--item--2 .post--img {height: 266px;}
-  .post--item--2 .thumb {height: 266px;}
+  .post--item--2 {height: 212px;}
+  .post--item--2 .post--img {height: 212px;}
+  .post--item--2 .thumb {height: 212px;}
   .post--item--2 .thumb img {height:100%;object-fit: cover;}
 
   .footer--widgets p, .footer--widgets li a {color:#fff;}
@@ -6372,11 +6374,14 @@ body {
 .news-listing .post--items .nav .li{
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   padding: 14px;}
-  .just-in-sm-img a.thumb {height: 78px;}
-  .just-in-li-p {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  .just-in-li-p div.post--item {
-  min-height: 142px;}
+  .banner-img-h,.banner-img-h .post--img, .banner-img-h .post--img a.thumb{height: 400px;}
+  .interview-section.post--layout-1, .interview-section.post--layout-1 .post--img, .interview-section.post--layout-1 .post--img .thumb {height: 240px;}
+  .just-in-sm-img {min-height: 190px;}
+  .just-in-sm-img .post--img .thumb {height: 100px;}
+  .top-banner-right {height: 193px;}
+  .interview-section-2 .post--img,.interview-section-2 .post--img .thumb {height: 240px;}
+  @media (min-width: 1200px){
+    .container {
+        width: 1370px!important;
+    }}
   /* New style end */

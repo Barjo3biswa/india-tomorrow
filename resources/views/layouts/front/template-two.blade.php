@@ -11,7 +11,7 @@
             @foreach ($section->contents($section->slug) as $key=>$news)
             @if ($key2==0)
                 <li>
-                    <div class="post--item post--layout-1">
+                    <div class="post--item interview-section post--layout-1">
                         <div class="post--img">
                             {{-- @if ($news->photo_or_video == 'photo')
                                     <a href="#" class="thumb">

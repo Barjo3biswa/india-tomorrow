@@ -1,15 +1,7 @@
 <div class="col-md-6 ptop--0 pbottom--30">
     <div class="post--items-title" data-ajax="tab">
         <h2 class="h4"><a href="{{ route('news.' . $section->slug) }}" class="cat">{{ $section->name }}</a></h2>
-        <div class="nav">
-            <a href="#" class="prev btn-link" data-ajax-action="load_prev_world_news_posts">
-                <i class="fa fa-long-arrow-left"></i>
-            </a>
-            <span class="divider">/</span>
-            <a href="#" class="next btn-link" data-ajax-action="load_next_world_news_posts">
-                <i class="fa fa-long-arrow-right"></i>
-            </a>
-        </div>
+
     </div>
     <div class="post--items post--items-2" data-ajax-content="outer">
         <ul class="nav row gutter--15" data-ajax-content="inner">
@@ -19,7 +11,7 @@
             @foreach ($section->contents($section->slug) as $key => $news)
                 @if ($key1 == 0)
                     <li class="col-xs-12">
-                        <div class="post--item post--layout-1">
+                        <div class="post--item interview-section post--layout-1">
                             <div class="post--img">
                                 {{-- @if ($news->photo_or_video == 'photo')
                                     <a href="{{asset($news->image)}}" class="thumb">

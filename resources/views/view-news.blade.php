@@ -217,20 +217,8 @@
                                 <ul class="nav row" data-ajax-content="inner">
                                     @foreach ($other_news as $other)
                                     <li class="col-sm-6 pbottom--30">
-                                        <div class="post--item post--layout-1">
+                                        <div class="post--item interview-section-2 post--layout-1">
                                             <div class="post--img">
-                                                {{-- @if ($other->photo_or_video == 'photo')
-                                                    <a href="#" class="thumb">
-                                                        <img src="{{asset($other->image)}}" alt="{{$other->news_slug}}">
-                                                    </a>
-                                                @else
-                                                    <a href="#" class="thumb">
-                                                        <iframe class="iframe" src="https://www.youtube.com/embed/{{$other->youtube_url}}"
-                                                            title="YouTube video player" frameborder="0"
-                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                            allowfullscreen></iframe>
-                                                    </a>
-                                                @endif --}}
                                                 @include('layouts.front.image-video-show', $news = $other)
                                                 <a href="#" class="cat">APSC Exam</a>
                                                 </a>
@@ -255,12 +243,6 @@
                                             <div class="post--content">
                                                 <p>{!!text_rank($other->description)!!}</p>
                                             </div>
-                                            {{-- <div class="post--action">
-                                                @php
-                                                    $cat_array = json_decode($other->category);
-                                                @endphp
-                                                <a href="{{route($cat_array[0],[$other->news_slug])}}">Continue Reading... </a>
-                                            </div> --}}
                                         </div>
                                     </li>
                                     @endforeach
