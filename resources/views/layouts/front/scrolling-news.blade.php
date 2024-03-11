@@ -4,7 +4,7 @@
 @endphp
 
 <div class="news--ticker">
-    <div class="container-fluid">
+    <div class="container-fluid1">
         <div class="title">
             <h2>News Updates</h2>
             <span>(Update 12 minutes ago)</span>

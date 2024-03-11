@@ -19,7 +19,7 @@
     @include('layouts.front.scrolling-news')
 
     <div class="main-content--section ptop--30 pbottom--30">
-        <div class="container-fluid">
+        <div class="container-fluid1">
             <div class="row">
                 <div class="main--content col-md-8" data-sticky-content="true">
                     <div class="sticky-content-inner">

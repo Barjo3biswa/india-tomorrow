@@ -24,6 +24,7 @@
     </a> --}}
     <a href="#" class="thumb" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="myfunction('{{$news->youtube_url}}')">
         <img src="https://img.youtube.com/vi/{{ $substring }}/0.jpg" alt="$cat_array[0]" width="600" height="300">
+        <div class="play-button"></div>
     </a>
 
 @endif

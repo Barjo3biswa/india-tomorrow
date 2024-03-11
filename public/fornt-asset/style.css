@@ -6381,6 +6381,23 @@ body {
   .just-in-sm-img .post--img .thumb {height: 100px;}
   .top-banner-right {height: 193px;}
   .interview-section-2 .post--img,.interview-section-2 .post--img .thumb {height: 240px;}
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36px;
+    height: 36px;
+    /* background-image: url(asset('font-asset/')'img/play-button.png'); */
+    background-image:url("../fornt-asset/img/play-button.png");
+    background-size: cover;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+
+
   @media (min-width: 1200px){
     .container {
         width: 1270px !important;
