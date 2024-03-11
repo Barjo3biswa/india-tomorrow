@@ -39,7 +39,7 @@
                                 </ul>
                             </div>
                             <div class="post--img news-details-banner">
-                                {{-- @include('layouts.front.image-video-show', $news = $news) --}}
+                                @include('layouts.front.image-video-show', $news = $news)
                             </div>
                             <div class="post--content">
                                 @php
@@ -161,7 +161,7 @@
                                         @foreach ($might_like as $like)
                                             <div class="post-slide">
                                                 <div class="post-img">
-                                                    {{-- @include('layouts.front.image-video-show', $news = $like) --}}
+                                                    @include('layouts.front.image-video-show', $news = $like)
                                                     <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
                                                 </div>
                                                 <div class="post-content">
@@ -192,7 +192,7 @@
                                     <li class="col-sm-6 pbottom--30">
                                         <div class="post--item interview-section-2 post--layout-1">
                                             <div class="post--img">
-                                                {{-- @include('layouts.front.image-video-show', $news = $other) --}}
+                                                @include('layouts.front.image-video-show', $news = $other)
                                                 <a href="#" class="cat">APSC Exam</a>
                                                 </a>
                                                 <div class="post--info">
@@ -297,7 +297,7 @@
                                                             <h3 class="h4">
                                                                 @php
                                                                     $cat_array = json_decode($news->category);
-                                                                    dump($cat_array[0]);
+                                                                    // dump($cat_array[0]);
                                                                 @endphp
                                                                 <a href="{{route($cat_array[0],[$other->news_slug])}}" class="btn-link">{{$news->news_title}} </a>
                                                             </h3>
