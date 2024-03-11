@@ -38,22 +38,8 @@
                                     <div class="sharethis-inline-share-buttons"></div>
                                 </ul>
                             </div>
-                            {{-- <div class="sharethis-inline-share-buttons"></div> --}}
                             <div class="post--img news-details-banner">
-                                {{-- @if ($news->photo_or_video == 'photo')
-                                    <a href="#" class="thumb">
-                                        <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
-                                        <p class="img-caption" style="text-align: left;">{{$news->image_caption}}</p>
-                                    </a>
-                                @else
-                                    <a href="#" class="thumb">
-                                        <iframe width="600" height="300" class="iframe" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                            title="YouTube video player" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowfullscreen></iframe>
-                                    </a>
-                                @endif --}}
-                                @include('layouts.front.image-video-show', $news = $news)
+                                {{-- @include('layouts.front.image-video-show', $news = $news) --}}
                             </div>
                             <div class="post--content">
                                 @php
