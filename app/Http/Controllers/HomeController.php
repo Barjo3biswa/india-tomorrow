@@ -270,6 +270,10 @@ class HomeController extends Controller
         if($request['photo_or_video']=="video" && $validate->youtube_url==null){
             return response(['error' => 'Can`t set video as this news downt have a video.']);
         }
+
+        if($request['publish_news']=='true' &&  $validate->category == null){
+            return response(['error' => 'you can`t Publish without assigning to a news section.']);
+        }
         DB::beginTransaction();
         try{
             if($request['first_news']=='true'){
