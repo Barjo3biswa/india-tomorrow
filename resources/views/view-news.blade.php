@@ -161,16 +161,7 @@
                                         @foreach ($might_like as $like)
                                             <div class="post-slide">
                                                 <div class="post-img">
-                                                    {{-- @if ($news->photo_or_video == 'photo')
-                                                            <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}">
-                                                    @else
-                                                            <iframe src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                                                title="YouTube video player" class="iframe" frameborder="0"
-                                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                                allowfullscreen></iframe>
-                                                    @endif --}}
-                                                    @include('layouts.front.image-video-show', $news = $like)
-                                                    {{-- <img src="{{asset($like->image)}}" alt=""> --}}
+                                                    {{-- @include('layouts.front.image-video-show', $news = $like) --}}
                                                     <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
                                                 </div>
                                                 <div class="post-content">
@@ -182,10 +173,6 @@
                                                     </h3>
                                                     <p class="post-description">{!!text_rank($like->description)!!}</p>
                                                     <span class="post-date"><i class="fa fa-clock-o"></i>{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</span>
-                                                    {{-- @php
-                                                        $cat_array = json_decode($like->category);
-                                                    @endphp
-                                                    <a href="{{route($cat_array[0],[$like->news_slug])}}" class="read-more">read more</a> --}}
                                                 </div>
                                             </div>
                                         @endforeach
