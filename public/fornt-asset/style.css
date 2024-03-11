@@ -6382,6 +6382,8 @@ body {
   .interview-section-2 .post--img,.interview-section-2 .post--img .thumb {height: 240px;}
   @media (min-width: 1200px){
     .container {
-        width: 1370px!important;
+        width: 1270px !important;
     }}
+
+
   /* New style end */
