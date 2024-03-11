@@ -39,6 +39,7 @@ class HomepageController extends Controller
                                             $appearance = $section->setCategory();
                                             return is_array($appearance) && in_array('featured', $appearance);
                                         })->take(2);
+        dd($featured_news);
         $trending = newsContent::where('status','Published')->orderBy('id','DESC')->get()->filter(function ($section) {
                                     $appearance = $section->setCategory();
                                     return is_array($appearance) && in_array('just-in', $appearance);
