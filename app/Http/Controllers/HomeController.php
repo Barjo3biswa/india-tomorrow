@@ -199,6 +199,9 @@ class HomeController extends Controller
         $hashtags_array = array_filter($hashtags_array);
         $json_result = json_encode($hashtags_array);
 
+        if($path ==null && $request->editable_id){
+            $path = newsContent::where('id',$request->editable_id)->first()->image;
+        }
         $data=[
             "news_title" => $request->news_title,
             'news_slug' => $slug,
