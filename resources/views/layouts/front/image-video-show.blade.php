@@ -1,7 +1,7 @@
 @php
     $cat_array = json_decode($news->category);
     $test = $news->youtube_url;
-    // dd($cat_array);
+
     $position = strpos($test, 'si');
     // dump($position);
     if ($position !== false) {
@@ -12,7 +12,7 @@
     }
 @endphp
 @if ($news->photo_or_video == 'photo')
-    <a href="{{ route($cat_array[0].',['.$news->news_slug.']') }}" class="thumb">
+    <a href="{{ route($cat_array[0], [$news->news_slug]) }}" class="thumb">
         <img src="{{ asset($news->image) }}" alt="{{ $news->news_slug }}" width="600" height="300">
     </a>
 @else
