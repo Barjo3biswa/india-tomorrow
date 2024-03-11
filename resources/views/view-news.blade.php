@@ -192,7 +192,7 @@
                                     <li class="col-sm-6 pbottom--30">
                                         <div class="post--item interview-section-2 post--layout-1">
                                             <div class="post--img">
-                                                @include('layouts.front.image-video-show', $news = $other)
+                                                {{-- @include('layouts.front.image-video-show', $news = $other) --}}
                                                 <a href="#" class="cat">APSC Exam</a>
                                                 </a>
                                                 <div class="post--info">
