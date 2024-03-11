@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\Route;
 class HomepageController extends Controller
 {
     public function index(){
-        $first_news = newsContent::where('first_news','true')->first();
+        $first_news = newsContent::where('first_news','true')->where('status','Published')->first();
         if(!$first_news){
-            $first_news = newsContent::orderBy('id','DESC')->first();
+            $first_news = newsContent::orderBy('id','DESC')->where('status','Published')->first();
         }
 
-        $second_news = newsContent::whereNot('id',$first_news->id??'')->orderBy('id','DESC')->get()->filter(function ($section) {
+        $second_news = newsContent::whereNot('id',$first_news->id??'')->where('status','Published')->orderBy('id','DESC')->get()->filter(function ($section) {
                             $appearance = $section->setCategory();
                             return is_array($appearance) && in_array('just-in', $appearance);
                         })->take(4);
@@ -32,14 +32,14 @@ class HomepageController extends Controller
     }
 
     public function viewNews($id){
-        $news = newsContent::where('news_slug',$id)->first();
-        $might_like = newsContent::whereNot('news_slug',$id)->get();
+        $news = newsContent::where('news_slug',$id)->where('status','Published')->first();
+        $might_like = newsContent::whereNot('news_slug',$id)->where('status','Published')->get();
         $other_news = newsContent::get()->take(2);
-        $featured_news = newsContent::get()->filter(function ($section) {
+        $featured_news = newsContent::where('status','Published')->get()->filter(function ($section) {
                                             $appearance = $section->setCategory();
                                             return is_array($appearance) && in_array('featured', $appearance);
                                         })->take(2);
-        $trending = newsContent::get()->filter(function ($section) {
+        $trending = newsContent::where('status','Published')->get()->filter(function ($section) {
                                     $appearance = $section->setCategory();
                                     return is_array($appearance) && in_array('just-in', $appearance);
                                 })->take(2);
@@ -49,16 +49,16 @@ class HomepageController extends Controller
     public function viewAllNews(){
         $routeName = Route::currentRouteName();
         $slug = str_replace("news.", "", $routeName);
-        $all_news = newsContent::where('category', 'like', '%' . $slug . '%')->get();
-        $related_news = newsContent::orderBy('id','DESC')->get()->filter(function ($section) {
+        $all_news = newsContent::where('category', 'like', '%' . $slug . '%')->where('status','Published')->get();
+        $related_news = newsContent::orderBy('id','DESC')->where('status','Published')->get()->filter(function ($section) {
             $appearance = $section->setCategory();
             return is_array($appearance) && in_array('just-in', $appearance);
         })->take('3');
-        $featured_news = newsContent::orderBy('id','DESC')->get()->filter(function ($section) {
+        $featured_news = newsContent::orderBy('id','DESC')->where('status','Published')->get()->filter(function ($section) {
             $appearance = $section->setCategory();
             return is_array($appearance) && in_array('featured', $appearance);
         })->take('3');
-        $trending = newsContent::orderBy('id','DESC')->get()->filter(function ($section) {
+        $trending = newsContent::orderBy('id','DESC')->where('status','Published')->get()->filter(function ($section) {
             $appearance = $section->setCategory();
             return is_array($appearance) && in_array('trending', $appearance);
         })->take('3');
