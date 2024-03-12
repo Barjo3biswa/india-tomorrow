@@ -33,14 +33,17 @@ class HomepageController extends Controller
     }
 
     public function viewNews(Request $request,$id){
-        // dump($clientIp = $request->ip());
+
+        $news = newsContent::where('news_slug',$id)->where('status','Published')->first();
+
+        $indiv_count = HitCount::where('news_id',$news->id)->where('ip_address',$request->ip())->get()->count();
         $data = [
-            'news_id' => 1,
+            'news_id' => $news->id,
             'ip_address' => $request->ip(),
-            'indiv_count' => 2,
+            'indiv_count' => $indiv_count,
         ];
         HitCount::create($data);
-        $news = newsContent::where('news_slug',$id)->where('status','Published')->first();
+
         $might_like = newsContent::whereNot('news_slug',$id)->where('status','Published')->orderBy('id','DESC')->get();
         $other_news = newsContent::orderBy('id','DESC')->get()->take(2);
         $featured_news = newsContent::where('status','Published')->orderBy('id','DESC')->get()->filter(function ($section) {
