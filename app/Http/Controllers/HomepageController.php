@@ -36,7 +36,12 @@ class HomepageController extends Controller
 
         $news = newsContent::where('news_slug',$id)->where('status','Published')->first();
 
-        $indiv_count = HitCount::where('news_id',$news->id)->where('ip_address',$request->ip())->get()->count();
+        $prev_count = HitCount::where('news_id',$news->id)->where('ip_address',$request->ip())->first();
+        if($prev_count){
+            $indiv_count = $prev_count->indiv_count+1;
+        }else{
+            $indiv_count = 0;
+        }
         $data = [
             'news_id' => $news->id,
             'ip_address' => $request->ip(),
