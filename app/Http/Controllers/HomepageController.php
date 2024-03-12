@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HitCount;
 use App\Models\newsContent;
 use App\Models\newsSection;
 use Illuminate\Http\Request;
@@ -31,7 +32,14 @@ class HomepageController extends Controller
         return view('welcome',compact('first_news','second_news','news_section','sub_news_section'));
     }
 
-    public function viewNews($id){
+    public function viewNews(Request $request,$id){
+        // dump($clientIp = $request->ip());
+        $data = [
+            'news_id' => 1,
+            'ip_address' => $request->ip(),
+            'indiv_count' => 2,
+        ];
+        HitCount::create($data);
         $news = newsContent::where('news_slug',$id)->where('status','Published')->first();
         $might_like = newsContent::whereNot('news_slug',$id)->where('status','Published')->orderBy('id','DESC')->get();
         $other_news = newsContent::orderBy('id','DESC')->get()->take(2);
@@ -46,6 +54,8 @@ class HomepageController extends Controller
                                 })->take(2);
         return view('view-news', compact('news','might_like','other_news','featured_news','trending'));
     }
+
+
 
     public function viewAllNews(){
         $routeName = Route::currentRouteName();
