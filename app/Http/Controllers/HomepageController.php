@@ -39,15 +39,17 @@ class HomepageController extends Controller
         $prev_count = HitCount::where('news_id',$news->id)->where('ip_address',$request->ip())->first();
         if($prev_count){
             $indiv_count = $prev_count->indiv_count+1;
+            $prev_count->update(['indiv_count'=>$indiv_count]);
         }else{
-            $indiv_count = 0;
+            $indiv_count = 1;
+            $data = [
+                'news_id' => $news->id,
+                'ip_address' => $request->ip(),
+                'indiv_count' => $indiv_count,
+            ];
+            HitCount::create($data);
         }
-        $data = [
-            'news_id' => $news->id,
-            'ip_address' => $request->ip(),
-            'indiv_count' => $indiv_count,
-        ];
-        HitCount::create($data);
+
 
         $might_like = newsContent::whereNot('news_slug',$id)->where('status','Published')->orderBy('id','DESC')->get();
         $other_news = newsContent::orderBy('id','DESC')->get()->take(2);
