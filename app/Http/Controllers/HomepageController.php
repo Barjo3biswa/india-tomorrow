@@ -89,4 +89,20 @@ class HomepageController extends Controller
     public function aboutUs(){
         return view('about-us');
     }
+
+    public function HitCount(Request $request){
+        $prev_count = HitCount::where('news_id', $request->news_id)->where('ip_address',$request->ip())->first();
+        if($prev_count){
+            $indiv_count = $prev_count->indiv_count+1;
+            $prev_count->update(['indiv_count'=>$indiv_count]);
+        }else{
+            $data = [
+                'news_id' =>  $request->news_id,
+                'ip_address' => $request->ip(),
+                'indiv_count' => 1,
+            ];
+            HitCount::create($data);
+        }
+        return response(['success' => 'viewed']);
+    }
 }

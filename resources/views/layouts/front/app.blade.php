@@ -149,12 +149,25 @@
 @yield('js')
 
 <script>
-    function myfunction(id){
+    function myfunction(id, news_id){
         var html = `<iframe width="100%" height="315" src="https://www.youtube.com/embed/`+id+`"
         title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
         </iframe>`;
         $("#video").empty();
         $("#video").append(html);
+
+        var data = {
+            'news_id': news_id,
+        };
+        $.ajax({
+            type: 'get',
+            url: "{{ route('hit-count') }}",
+            data: data,
+            success: function(response){
+                console.log(response.success);
+            },
+        });
+
     }
 
 </script>
