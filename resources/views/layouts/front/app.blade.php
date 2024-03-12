@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="{{ asset('fornt-asset') }}/css/colors/theme-color-1.css" id="changeColorScheme">
     <link rel="stylesheet" href="{{ asset('fornt-asset') }}/css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=65e96edb9391bf00191aa1aa&product=inline-share-buttons' async='async'></script>    @yield('css')
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=65f041d66360a80019e2e78b&product=sop' async='async'></script>
+    {{-- <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=65e96edb9391bf00191aa1aa&product=inline-share-buttons' async='async'></script>    @yield('css') --}}
 
     <style>
     .popup_popup {
