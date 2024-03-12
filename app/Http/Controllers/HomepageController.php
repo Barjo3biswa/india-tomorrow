@@ -41,11 +41,10 @@ class HomepageController extends Controller
             $indiv_count = $prev_count->indiv_count+1;
             $prev_count->update(['indiv_count'=>$indiv_count]);
         }else{
-            $indiv_count = 1;
             $data = [
                 'news_id' => $news->id,
                 'ip_address' => $request->ip(),
-                'indiv_count' => $indiv_count,
+                'indiv_count' => 1,
             ];
             HitCount::create($data);
         }
