@@ -85,4 +85,9 @@ function fetchWeatherData()
         return json_decode($response->getBody(), true);
     }
 
+function extractCharacter($string, $length){
+    $first_60_characters = substr($string, 0, $length);
+    return $first_60_characters;
+}
+
 

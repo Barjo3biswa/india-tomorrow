@@ -29,6 +29,77 @@
     #st-cmp-v2{
         display: none !important;
     }
+
+    /* zoom animation start */
+    /* .zoom-in-zoom-out {
+    margin: 24px;
+    animation: zoom-in-zoom-out 2s ease-out infinite;
+    width:800px;
+    margin: 0 auto;
+    text-align:center;
+    font-size:2.6rem;
+    margin-top: 1.4rem;
+    color: #da0000;
+    }
+
+    @keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.5, 1.5);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+    } */
+
+    .reveal-container {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+     overflow: hidden;
+     animation: revealAnimationContainer 2s INFINITE forwards;
+     margin-top: 12px;
+    }
+    .reveal-text {
+        margin: 0;
+        padding: 0px;
+        color: #da0000;
+        font-size: 2.7rem;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        animation: revealAnimation 2s forwards INFINITE;
+        letter-spacing: 1.2px;
+        font-weight: 600;
+    }
+    @keyframes revealAnimationContainer {
+        50% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.8);
+        }
+    }
+    @keyframes revealAnimation {
+        0% {
+            transform: translateY(100%) ;
+        }
+        50% {
+            transform: translateY(0) ;
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    /* zoom animation end */
+
+
+
+
     </style>
 </head>
 

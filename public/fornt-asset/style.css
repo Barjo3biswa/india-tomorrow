@@ -3472,13 +3472,13 @@ body {
     margin-bottom: 0;
   }
   .news--ticker {
-    margin-top: 30px;
+    margin-top: 12px;
   }
   .news--ticker .title {
     float: left;
     padding: 4px 30px 4px;
     color: #fff;
-    background-color: #1d1d1d;
+    background-color: #da0000;
   }
   .news--ticker .title h2 {
     display: inline-block;
@@ -6397,7 +6397,13 @@ body {
     background-repeat: no-repeat;
 }
 
-
+.first_temp a.thumb {
+    height:101px;
+}
+.first_temp .post--info {
+    min-height: 60px;
+    overflow: hidden;
+}
 
   @media (min-width: 1200px){
     .container {

@@ -56,7 +56,7 @@
                     </li>
                 @else
                     <li class="col-xs-6">
-                        <div class="post--item post--layout-2">
+                        <div class="post--item post--layout-2 first_temp">
                             <div class="post--img">
                                 {{-- @if ($news->photo_or_video == 'photo')
                                     <a href="#" class="thumb">
@@ -83,7 +83,7 @@
                                                 $cat_array = json_decode($news->category);
                                             @endphp
                                             <a href="{{ route($cat_array[0], [$news->news_slug]) }}"
-                                                class="btn-link">{{ $news->news_title }}</a>
+                                                class="btn-link">{{ extractCharacter($news->news_title, 60) }}</a>
                                         </h3>
                                     </div>
                                 </div>

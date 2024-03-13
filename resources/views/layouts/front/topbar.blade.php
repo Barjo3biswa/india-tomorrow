@@ -114,7 +114,11 @@
         </div>
     </div>
 </header>
-<div class="posts--filter-bar style--1 hidden-xs">
+{{-- <div class="zoom-in-zoom-out">BREAKIBG NEWS</div> --}}
+<div class="reveal-container">
+    <h1 class="reveal-text">BREAKING NEWS</h1>
+</div>
+{{-- <div class="posts--filter-bar style--1 hidden-xs">
     <div class="container">
         <ul class="nav">
             @foreach ($sub_menu as $sub)
@@ -126,7 +130,7 @@
             @endforeach
         </ul>
     </div>
-</div>
+</div> --}}
 
 
 
