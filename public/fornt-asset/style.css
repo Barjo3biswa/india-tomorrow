@@ -3677,7 +3677,7 @@ body {
     margin-top: 15px;
   }
   .post--items hr.divider {
-    margin: 15px 0;
+    margin: 8px 0;
   }
   .post--items hr.divider--25 {
     margin: 25px 0;
@@ -6404,7 +6404,13 @@ body {
     min-height: 60px;
     overflow: hidden;
 }
-
+.third_temp a.thumb {
+    height: 268px;
+}
+.third_temp a.thumb img{
+    height: 100%;
+    object-fit: cover;
+}
   @media (min-width: 1200px){
     .container {
         width: 1270px !important;

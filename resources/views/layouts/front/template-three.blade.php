@@ -10,7 +10,7 @@
             @foreach ($section->contents($section->slug) as $key=>$news)
                 @if ($key3==0)
                 <li class="col-md-6">
-                    <div class="post--item post--layout-2 bg-white">
+                    <div class="post--item post--layout-2 bg-white third_temp">
                         <div class="post--img">
                             @include('layouts.front.image-video-show', $news = $news)
                             <a href="{{route('news.'.$section->slug)}}" class="cat">{{$section->name}}</a>
