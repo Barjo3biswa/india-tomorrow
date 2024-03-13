@@ -22,7 +22,8 @@
                                         @endphp
                                         <a href="{{route($cat_array[0],[$news->news_slug])}}" class="btn-link">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}{{$key3}}</a>
                                     </h3>
-                                    <p>{{$news->news_title}}</p>
+                                    <p>{{extractCharacter($news->news_title, 60)}}</p>
+                                    {{-- <p>{!!text_rank($news->description)!!}</p> --}}
                                 </div>
                             </div>
                         </div>

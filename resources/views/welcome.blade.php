@@ -210,7 +210,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="transform: none;">
+        <div class="row" style="transform: none; margin-top:2rem;">
             <div class="main--content col-md-8 col-sm-7" data-sticky-content="true"
                 style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
                 <div class="sticky-content-inner"
