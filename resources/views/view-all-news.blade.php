@@ -252,13 +252,13 @@
                                                         @include('layouts.front.image-video-show', $news = $news)
                                                     </a>
                                                     <div class="post--info">
-                                                        <ul class="nav meta">
+                                                        {{-- <ul class="nav meta">
                                                             <li>
                                                                 <a href="#">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
                                                             </li>
-                                                        </ul>
+                                                        </ul> --}}
                                                         <div class="title">
-                                                            <h3 class="h4">
+                                                            <h3 class="h4" style="margin-left: 5px;">
                                                                 <a href="{{route($slug,[$news->news_slug])}}" class="btn-link">{{$news->news_title}}..</a>
                                                             </h3>
                                                         </div>
