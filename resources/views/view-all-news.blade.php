@@ -196,41 +196,6 @@
                                 </div>
                             @endforeach
                         </div>
-                        <div class="widget">
-                            <div class="widget--title">
-                                <h2 class="h4">News Archives</h2>
-                                <i class="icon fa fa-folder-open-o"></i>
-                            </div>
-                            <div class="nav--widget">
-                                <ul class="nav">
-                                    <li>
-                                        <a href="#">
-                                            <span>Dec 2023</span>
-                                            <span>(36)</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span>Dec 2021</span>
-                                            <span>(41)</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span>Dec 2020</span>
-                                            <span>(39)</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span>Dec 2019</span>
-                                            <span>(15)</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
 
                         {{-- <div class="widget">
                             <div class="widget--title">
