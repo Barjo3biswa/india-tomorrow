@@ -128,6 +128,8 @@
                             </ul>
                         </div>
                         @endforeach
+
+                        {{$all_news->links()}}
                         {{-- <div class="pagination--wrapper clearfix bdtop--1 bd--color-2 ptop--60 pbottom--30">
                             <p class="pagination-hint float--left">Page 02 of 03</p>
                             <ul class="pagination float--right">
