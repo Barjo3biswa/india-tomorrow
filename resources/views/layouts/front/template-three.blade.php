@@ -7,7 +7,7 @@
             @php
                 $key3= 0;
             @endphp
-            @foreach ($section->contents($section->slug) as $key=>$news)
+            @foreach ($section->contents($section->slug)->take(5) as $key=>$news)
                 @if ($key3==0)
                 <li class="col-md-6">
                     <div class="post--item post--layout-2 bg-white third_temp">

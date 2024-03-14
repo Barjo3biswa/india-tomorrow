@@ -8,7 +8,7 @@
             @php
                 $key2 = 0;
             @endphp
-            @foreach ($section->contents($section->slug) as $key=>$news)
+            @foreach ($section->contents($section->slug)->take(5) as $key=>$news)
             @if ($key2==0)
                 <li>
                     <div class="post--item interview-section post--layout-1">
