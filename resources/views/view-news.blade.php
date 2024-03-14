@@ -82,20 +82,22 @@
                         </div>
                         <div class="post--tags">
                             @php
-                                $hastags = json_decode($news->hashtags)??[];
+                                $hastags = json_decode($news->hashtags)??null;
                             @endphp
+                            @if (is_array($hastags))
                             <ul class="nav">
-                              <li>
-                                <span>
-                                  <i class="fa fa-tags"></i>
-                                </span>
-                              </li>
-                                @foreach ($hastags as $tags)
-                                    <li>
-                                        <a href="#">{{$tags}}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
+                                <li>
+                                  <span>
+                                    <i class="fa fa-tags"></i>
+                                  </span>
+                                </li>
+                                  @foreach ($hastags as $tags)
+                                      <li>
+                                          <a href="#">{{$tags}}</a>
+                                      </li>
+                                  @endforeach
+                              </ul>
+                            @endif
                         </div>
                         <div class="ad--space pd--20-0-40">
                             <a href="#">
@@ -103,83 +105,53 @@
                             </a>
                         </div>
 
-                        {{-- <div class="post--author-info clearfix">
-                            <div class="comment-block">
-                                <div class="block-header">
-                                    <div class="title">
-                                        <h4>Post a comment</h4>
-                                    </div>
+                        @if ($might_like->count()>0)
+                            <div class="post--related ptop--30">
+                                <div class="post--items-title" data-ajax="tab">
+                                    <h2 class="h4">You Might Also Like</h2>
                                 </div>
-                                <div class="writing" onclick="this.focus()">
-                                    <div contenteditable="true" class="textarea" spellcheck="false">
-                                        <p><a class="tagged-user">@IndiaTomorrow</a></p>
-                                    </div>
-                                    <div class="footer">
-                                        <div class="text-format">
-                                            <button class="btn"><i class="ri-bold"></i></button>
-                                            <button class="btn"><i class="ri-italic"></i></button>
-                                            <button class="btn"><i class="ri-underline"></i></button>
-                                            <button class="btn"><i class="ri-list-unordered"></i></button>
-                                        </div>
-                                        <div class="group-button">
-                                            <button class="btn"><i class="ri-at-line"></i></button>
-                                            <button class="btn primary send-btn">Send</button>
-                                        </div>
-                                    </div>
-                                    <div class="social-icons">\
-                                        <ul class="social-media-send-popup">
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-youtube-play"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
+                                <div class="post--items post--items-2 news-section-title">
+                                    <ul class="nav row" data-ajax-content="inner">
+                                        @foreach ($might_like as $other)
+                                        <li class="col-sm-6 pbottom--30">
+                                            <div class="post--item interview-section-2 post--layout-1">
+                                                <div class="post--img">
+                                                    @include('layouts.front.image-video-show', $news = $other)
+                                                    <a href="#" class="cat">APSC Exam</a>
+                                                    </a>
+                                                    <div class="post--info">
+                                                        <ul class="nav meta">
 
-                                    </div>
+                                                            <li>
+                                                                <a href="#">{{date('d-M-Y', strtotime($other->news_date))}}, {{date("h:i A", strtotime($other->news_time))}}</a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="title">
+                                                            <h3 class="h4">
 
-                                </div>
-                            </div>
-                        </div> --}}
-
-                        <div class="post--related ptop--30">
-                            <div class="post--items-title" data-ajax="tab">
-                                <h2 class="h4">You Might Also Like</h2>
-                            </div>
-                            <div class="container-fluid1">
-                                <div class="row">
-                                    <div id="news-slider" class="owl-carousel">
-                                        @foreach ($might_like as $like)
-                                            <div class="post-slide">
-                                                <div class="post-img">
-                                                    @include('layouts.front.image-video-show', $news = $like)
-                                                    <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
+                                                                @php
+                                                                    $cat_array = json_decode($other->category);
+                                                                @endphp
+                                                                <a href="{{route($cat_array[0],[$other->news_slug])}}"class="btn-link">{{$other->news_title}}</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="post-content">
-                                                    <h3 class="post-title">
-                                                        @php
-                                                            $cat_array = json_decode($like->category);
-                                                        @endphp
-                                                        <a href="{{route($cat_array[0],[$like->news_slug])}}">{{$like->news_title}}</a>
-                                                    </h3>
-                                                    <p class="post-description">{!!text_rank($like->description)!!}</p>
-                                                    <span class="post-date"><i class="fa fa-clock-o"></i>{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</span>
+                                                <div class="post--content">
+                                                    <p>{!!text_rank($other->description)!!}</p>
                                                 </div>
                                             </div>
+                                        </li>
                                         @endforeach
+                                    </ul>
+                                    <div class="preloader bg--color-0--b" data-preloader="1">
+                                        <div class="preloader--inner"></div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
+
+
 
 
                         <div class="post--related ptop--30">
@@ -275,7 +247,7 @@
                                         <li>
                                             <div class="post--item post--layout-3">
                                                 <div class="post--img">
-                                                    @if ($news->photo_or_video == 'photo')
+                                                    {{-- @if ($news->photo_or_video == 'photo')
                                                         <a href="#" class="thumb">
                                                             <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}">
                                                         </a>
@@ -286,7 +258,8 @@
                                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                                 allowfullscreen></iframe>
                                                         </a>
-                                                    @endif
+                                                    @endif --}}
+                                                    @include('layouts.front.image-video-show', $news = $news)
                                                     <div class="post--info">
                                                         <ul class="nav meta">
                                                             <li>
@@ -355,7 +328,7 @@
                                         <li>
                                             <div class="post--item post--layout-3">
                                                 <div class="post--img">
-                                                    @if ($news->photo_or_video == 'photo')
+                                                    {{-- @if ($news->photo_or_video == 'photo')
                                                         <a href="#" class="thumb">
                                                             <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}">
                                                         </a>
@@ -366,7 +339,8 @@
                                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                                 allowfullscreen></iframe>
                                                         </a>
-                                                    @endif
+                                                    @endif --}}
+                                                    @include('layouts.front.image-video-show', $news = $news)
                                                     <div class="post--info">
                                                         <ul class="nav meta">
                                                             <li>

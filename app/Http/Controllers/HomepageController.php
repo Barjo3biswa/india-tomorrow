@@ -49,9 +49,20 @@ class HomepageController extends Controller
             HitCount::create($data);
         }
 
+        $might_like = newsContent::whereNot('id',$news->id)->where('status','Published')->orderBy('id','DESC')->get();
+        $current_list = $news->sethashtags();
+        if(is_array($current_list)){
+            $might_like = $might_like->filter(function($hashtags) use($current_list){
+                $list = $hashtags->sethashtags();
+                return is_array($list) && array_intersect($current_list, $list);
+            })->take(2);
+        }else{
+            $might_like = $might_like->take(0);
+        }
 
-        $might_like = newsContent::whereNot('news_slug',$id)->where('status','Published')->orderBy('id','DESC')->get();
-        $other_news = newsContent::orderBy('id','DESC')->get()->take(2);
+
+        $other_news = newsContent::where('status','Published')->inRandomOrder()->limit(2)->get();
+        // dd($other_news);
         $featured_news = newsContent::where('status','Published')->orderBy('id','DESC')->get()->filter(function ($section) {
                                             $appearance = $section->setCategory();
                                             return is_array($appearance) && in_array('featured', $appearance);

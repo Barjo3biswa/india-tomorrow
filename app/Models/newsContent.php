@@ -15,4 +15,9 @@ class newsContent extends Model
     {
         return json_decode($this->category, true);
     }
+
+    public function sethashtags()
+    {
+        return json_decode($this->hashtags, true);
+    }
 }
