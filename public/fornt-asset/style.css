@@ -6413,7 +6413,7 @@ body {
     height: 100%;
     object-fit: cover;
 }
-.right-sidebar-home .post--item.post--layout-3 .post--img .thumb {
+.right-sidebar-home .post--img .thumb {
     margin-right: 20px;
 }
   @media (min-width: 1200px){
