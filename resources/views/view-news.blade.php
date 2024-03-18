@@ -137,9 +137,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="post--content">
+                                                {{-- <div class="post--content">
                                                     <p>{!!text_rank($other->description)!!}</p>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </li>
                                         @endforeach
@@ -185,9 +185,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="post--content">
+                                            {{-- <div class="post--content">
                                                 <p>{!!text_rank($other->description)!!}</p>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </li>
                                     @endforeach
