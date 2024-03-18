@@ -3728,6 +3728,11 @@ body {
     transition: opacity 0.25s ease-in-out; */
     z-index: 1;
   }
+  .right-sidebar-inner .post--info .meta > li {
+    display: inline-block;
+    margin: 0 7.5px;
+    margin-top: 4px;
+}
   .post--item.post--type-audio .thumb:after,
   .post--item.post--type-video .thumb:after {
     content: "\f04b";
