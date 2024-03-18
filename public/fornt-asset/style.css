@@ -3729,8 +3729,6 @@ body {
     z-index: 1;
   }
   .right-sidebar-inner .post--info .meta > li {
-    display: inline-block;
-    margin: 0 7.5px;
     margin-top: 4px;
 }
   .post--item.post--type-audio .thumb:after,
