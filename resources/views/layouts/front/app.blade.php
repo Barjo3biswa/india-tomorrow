@@ -172,15 +172,15 @@
     <script src="{{ asset('fornt-asset') }}/js/jquery-3.2.1.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/bootstrap.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/jquery.sticky.min.js"></script>
-    {{-- <script src="{{ asset('fornt-asset') }}/js/jquery.hoverIntent.min.js"></script> --}}
-    {{-- <script src="{{ asset('fornt-asset') }}/js/jquery.marquee.min.js" async></script> --}}
-    {{-- <script src="{{ asset('fornt-asset') }}/js/jquery.validate.min.js"></script> --}}
-    {{-- <script src="{{ asset('fornt-asset') }}/js/isotope.min.js" async></script>
-    <script src="{{ asset('fornt-asset') }}/js/resizesensor.min.js" async></script> --}}
+    <script src="{{ asset('fornt-asset') }}/js/jquery.hoverIntent.min.js"></script>
+    <script src="{{ asset('fornt-asset') }}/js/jquery.marquee.min.js" async></script>
+    <script src="{{ asset('fornt-asset') }}/js/jquery.validate.min.js"></script>
+    <script src="{{ asset('fornt-asset') }}/js/isotope.min.js" async></script>
+    <script src="{{ asset('fornt-asset') }}/js/resizesensor.min.js" async></script>
     <script src="{{ asset('fornt-asset') }}/js/theia-sticky-sidebar.min.js"></script>
-    {{-- <script src="{{ asset('fornt-asset') }}/js/jquery.zoom.min.js"></script>
-    <script src="{{ asset('fornt-asset') }}/js/jquery.barrating.min.js"></script> --}}
-    {{-- <script src="{{ asset('fornt-asset') }}/js/jquery.countdown.min.js"></script> --}}
+    <script src="{{ asset('fornt-asset') }}/js/jquery.zoom.min.js"></script>
+    <script src="{{ asset('fornt-asset') }}/js/jquery.barrating.min.js"></script>
+    <script src="{{ asset('fornt-asset') }}/js/jquery.countdown.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/retina.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/main.js"></script>
 @yield('js')
