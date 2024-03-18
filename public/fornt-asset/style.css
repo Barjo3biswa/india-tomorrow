@@ -3699,7 +3699,7 @@ body {
   .post--item.post--layout-3 .post--img .thumb {
     float: left;
     max-width: 100px;
-    /* margin-right: 20px; */
+    margin-right: 20px;
     height: 66px;
   }
   .post--item.post--layout-4 .post--img .thumb {
