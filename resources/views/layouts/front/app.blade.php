@@ -70,7 +70,7 @@
             transform: translateY(0);
         }
     }
-    @media(max-width:600px) {
+    @media(max-width:800px) {
         @keyframes revealAnimationContainer {
         50% {
             transform: scale(.8);
