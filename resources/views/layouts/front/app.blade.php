@@ -21,8 +21,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
     <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=65f041d66360a80019e2e78b&product=sop' async='async'></script>
     @yield('css')
+    <div id="image-video-all">
 
-
+    </div>
     <style>
     .popup_popup {
         display: none !important;
@@ -241,6 +242,14 @@
             },
         });
 
+    }
+
+    function pushImage(image_url){
+        alert("ok");
+        var html = `<meta property="og:image" content="`+image_url+`">
+                    <meta property="og:image:width" content="1200">
+                    <meta property="og:image:height" content="630">`;
+        $("#image-video-all").append(html);
     }
 
 </script>
