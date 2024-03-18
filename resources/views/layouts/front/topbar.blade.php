@@ -64,7 +64,7 @@
         </div>
     </div>
     <div id="sticky-wrapper" class="sticky-wrapper" style="height: 92px;">
-        <div class="header--navbar navbar bd--color-1 bg--color-0" data-trigger="sticky" style="width: 1349px;">
+        <div class="header--navbar navbar bd--color-1 bg--color-0" data-trigger="sticky">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
