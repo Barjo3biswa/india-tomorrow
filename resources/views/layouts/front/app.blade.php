@@ -22,6 +22,7 @@
     <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=65f041d66360a80019e2e78b&product=sop' async='async'></script>
     @yield('css')
 
+
     <style>
     .popup_popup {
         display: none !important;

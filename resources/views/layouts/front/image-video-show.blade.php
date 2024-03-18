@@ -15,11 +15,17 @@
     <a href="{{ route($cat_array[0], [$news->news_slug]) }}" class="thumb">
         <img src="{{ asset($news->image) }}" alt="{{ $news->news_slug }}" width="600" height="300">
     </a>
+    <meta property="og:image" content="{{ asset($news->image) }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 @else
     <a href="#" class="thumb" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="myfunction('{{ $news->youtube_url }}', '{{ $news->id }}')">
         <img src="https://img.youtube.com/vi/{{ $substring }}/0.jpg" alt="$cat_array[0]" width="600" height="300">
         <div class="play-button"></div>
     </a>
+    <meta property="og:image" content="https://img.youtube.com/vi/{{ $substring }}/0.jpg" alt="$cat_array[0]">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
 @endif
 
