@@ -70,6 +70,16 @@
             transform: translateY(0);
         }
     }
+    @media(max-width:600px) {
+        @keyframes revealAnimationContainer {
+        50% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.2);
+        }
+    }
+    }
     </style>
 </head>
 
