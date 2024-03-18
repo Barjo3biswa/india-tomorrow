@@ -10,19 +10,6 @@
                         <div class="post--item post--layout-1 post--title-larger banner-img-h">
                             <div class="post--img">
                                 @if ($first_news)
-                                    {{-- @if ($first_news->photo_or_video == 'photo')
-                                        <a href="#" class="thumb" style="height: 490px;">
-                                            <img src="{{asset($first_news->image)}}" alt="{{$first_news->news_slug}}" width="600" height="300">
-
-                                        </a>
-                                    @else
-                                        <a href="#" class="thumb" style="height: 490px;">
-                                            <iframe width="100%" height="100%" class="iframe" src="https://www.youtube.com/embed/{{$first_news->youtube_url}}"
-                                                title="YouTube video player" frameborder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                allowfullscreen></iframe>
-                                        </a>
-                                    @endif --}}
                                     @include('layouts.front.image-video-show', $news = $first_news)
                                     <div class="post--info">
                                         <ul class="nav meta">
@@ -49,18 +36,6 @@
                             <div class="col-xs-6 col-xss-12">
                                 <div class="post--item post--layout-1 post--title-large post--item--1 top-banner-right">
                                     <div class="post--img">
-                                        {{-- @if ($news->photo_or_video == 'photo')
-                                            <a href="#" class="thumb">
-                                                <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
-                                            </a>
-                                        @else
-                                            <a href="#" class="thumb">
-                                                <iframe width="100%" height="100%" class="iframe" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                                    title="YouTube video player" frameborder="0"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                    allowfullscreen></iframe>
-                                            </a>
-                                        @endif --}}
                                         @include('layouts.front.image-video-show', $news = $news)
                                         <a href="#" class="cat">Just In</a>
                                         <div class="post--info">
@@ -82,16 +57,6 @@
                                 </div>
                             </div>
                             @endforeach
-                            {{-- <div class="col-sm-12 hidden-sm hidden-xs">
-                                <div class="post--item post--layout-1 post--title-larger post--item--2">
-                                    <div class="post--img">
-                                        <a href="#" class="thumb">
-                                            <img src="https://www.galaxyeduworld.com/storage/news/1686737792_6489938001acd_750_351.jpg" alt="">
-                                        </a>
-                                        <a href="#" class="cat">ADVERTISEMENT</a>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -102,7 +67,6 @@
                 <div class="sticky-content-inner news-section-title">
                     <div class="row">
                         @php
-                            // $order = ['template-one','template-two','template-three','template-four'];
                             $order = ['template-four','template-three','template-four','template-three'];
                             $serial = 1;
                         @endphp
@@ -122,11 +86,6 @@
                                 $serial = $serial+1;
                             @endphp
                                     @include('layouts.front.template-three')
-                            {{-- @elseif($serial%4==0 && $section->contents($section->slug)->count()>0)
-                            @php
-                                $serial = $serial+1;
-                            @endphp
-                                @include('layouts.front.template-four') --}}
                             @endif
                         @endforeach
                     </div>
@@ -146,18 +105,6 @@
                                         <li>
                                             <div class="post--item post--layout-3">
                                                 <div class="post--img">
-                                                    {{-- @if ($news->photo_or_video == 'photo')
-                                                        <a href="#" class="thumb">
-                                                            <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
-                                                        </a>
-                                                    @else
-                                                        <a href="#" class="thumb">
-                                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                                                title="YouTube video player" frameborder="0"
-                                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                                allowfullscreen></iframe>
-                                                        </a>
-                                                    @endif --}}
                                                     @include('layouts.front.image-video-show', $news = $news)
                                                     <div class="post--info">
                                                         <ul class="nav meta">

@@ -39,18 +39,6 @@
                                         <li>
                                             <div class="post--item post--layout-3">
                                                 <div class="post--img">
-                                                    {{-- @if ($news->photo_or_video == 'photo')
-                                                        <a href="#" class="thumb">
-                                                            <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
-                                                        </a>
-                                                    @else
-                                                        <a href="#" class="thumb">
-                                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                                                title="YouTube video player" frameborder="0"
-                                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                                allowfullscreen></iframe>
-                                                        </a>
-                                                    @endif --}}
                                                     @include('layouts.front.image-video-show', $news = $news)
                                                     <div class="post--info">
                                                         <div class="title">
@@ -83,20 +71,7 @@
                                         <div class="row">
                                             <div class="col-md-4 col-sm-12 col-xs-4 col-xxs-12">
                                                 <div class="post--img">
-                                                    {{-- @if ($news->photo_or_video == 'photo')
-                                                        <a href="#" class="thumb">
-                                                            <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}">
-                                                        </a>
-                                                    @else
-                                                        <a href="#" class="thumb">
-                                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                                                title="YouTube video player" frameborder="0"
-                                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                                allowfullscreen></iframe>
-                                                        </a>
-                                                    @endif --}}
                                                     @include('layouts.front.image-video-show', $news = $news)
-                                                    {{-- <a href="{{route($slug,[$news->news_slug])}}" class="cat">News</a> --}}
                                                 </div>
                                             </div>
                                             <div class="col-md-8 col-sm-12 col-xs-8 col-xxs-12">
@@ -117,9 +92,6 @@
                                                     <p>{!!text_rank($news->description)!!}...</p>
                                                 </div>
                                                 @endif
-                                                {{-- <div class="post--action">
-                                                    <a href="{{route($slug,[$news->news_slug])}}">Continue Reading...</a>
-                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -128,40 +100,7 @@
                             </ul>
                         </div>
                         @endforeach
-
                         {{$all_news->links()}}
-                        {{-- <div class="pagination--wrapper clearfix bdtop--1 bd--color-2 ptop--60 pbottom--30">
-                            <p class="pagination-hint float--left">Page 02 of 03</p>
-                            <ul class="pagination float--right">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-long-arrow-left"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">01</a>
-                                </li>
-                                <li class="active">
-                                    <span>02</span>
-                                </li>
-                                <li>
-                                    <a href="#">03</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-angle-double-right"></i>
-                                    <i class="fa fa-angle-double-right"></i>
-                                    <i class="fa fa-angle-double-right"></i>
-                                </li>
-                                <li>
-                                    <a href="#">20</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-long-arrow-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div> --}}
                     </div>
                 </div>
                 <div class="main--sidebar col-md-3 col-sm-5 ptop--30 pbottom--30" data-sticky-content="true"
@@ -174,18 +113,6 @@
                             @foreach ($related_news as $news)
                                 <div class="profile--widget">
                                     <div class="contributor--item style--1">
-                                        {{-- @if ($news->photo_or_video == 'photo')
-                                            <div class="img">
-                                                <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}">
-                                            </div>
-                                        @else
-                                            <div class="img">
-                                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                                    title="YouTube video player" frameborder="0"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                    allowfullscreen></iframe>
-                                            </div>
-                                        @endif --}}
                                         @include('layouts.front.image-video-show', $news = $news)
                                         <div class="name">
                                             <h3 class="h4">
@@ -196,34 +123,6 @@
                                 </div>
                             @endforeach
                         </div>
-
-                        {{-- <div class="widget">
-                            <div class="widget--title">
-                                <h2 class="h4">Get Newsletter</h2>
-                                <i class="icon fa fa-envelope-open-o"></i>
-                            </div>
-                            <div class="subscribe--widget">
-                                <div class="content">
-                                    <p>Subscribe to our newsletter to get latest news, popular news and exclusive updates.
-                                    </p>
-                                </div>
-                                <form
-                                    action="https://themelooks.us13.list-manage.com/subscribe/post?u=79f0b132ec25ee223bb41835f&amp;id=f4e0e93d1d"
-                                    method="post" name="mc-embedded-subscribe-form" target="_blank"
-                                    data-form="mailchimpAjax">
-                                    <div class="input-group">
-                                        <input type="email" name="EMAIL" placeholder="E-mail address"
-                                            class="form-control" autocomplete="off" required>
-                                        <div class="input-group-btn">
-                                            <button type="submit" class="btn btn-lg btn-default active">
-                                                <i class="fa fa-paper-plane-o"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="status"></div>
-                                </form>
-                            </div>
-                        </div> --}}
                         <div class="widget">
                             <div class="widget--title">
                                 <h2 class="h4">Featured News</h2>
@@ -237,26 +136,9 @@
                                             <div class="post--item post--layout-3">
                                                 <div class="post--img">
                                                     <a href="{{route($slug,[$news->news_slug])}}" class="thumb">
-                                                        {{-- @if ($news->photo_or_video == 'photo')
-                                                            <div class="img">
-                                                                <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}">
-                                                            </div>
-                                                        @else
-                                                            <div class="img">
-                                                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                                                    title="YouTube video player" frameborder="0"
-                                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                                    allowfullscreen></iframe>
-                                                            </div>
-                                                        @endif --}}
                                                         @include('layouts.front.image-video-show', $news = $news)
                                                     </a>
                                                     <div class="post--info">
-                                                        {{-- <ul class="nav meta">
-                                                            <li>
-                                                                <a href="#">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
-                                                            </li>
-                                                        </ul> --}}
                                                         <div class="title">
                                                             <h3 class="h4" style="margin-left: 5px;">
                                                                 <a href="{{route($slug,[$news->news_slug])}}" class="btn-link">{{$news->news_title}}..</a>

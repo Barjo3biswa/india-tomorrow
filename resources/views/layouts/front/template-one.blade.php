@@ -13,18 +13,6 @@
                     <li class="col-xs-12">
                         <div class="post--item interview-section post--layout-1">
                             <div class="post--img">
-                                {{-- @if ($news->photo_or_video == 'photo')
-                                    <a href="{{asset($news->image)}}" class="thumb">
-                                        <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
-                                    </a>
-                                @else
-                                    <a href="#" class="thumb">
-                                        <iframe width="100%" height="100%" class="iframe" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                            title="YouTube video player" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowfullscreen></iframe>
-                                    </a>
-                                @endif --}}
                                 @include('layouts.front.image-video-show', $news = $news)
                                 <a href="{{ route('news.' . $section->slug) }}" class="cat">{{ $section->name }}</a>
 
@@ -58,25 +46,8 @@
                     <li class="col-xs-6">
                         <div class="post--item post--layout-2 first_temp">
                             <div class="post--img">
-                                {{-- @if ($news->photo_or_video == 'photo')
-                                    <a href="#" class="thumb">
-                                        <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}" width="600" height="300">
-                                    </a>
-                                @else
-                                    <a href="#" class="thumb">
-                                        <iframe width="100%" height="100%" class="iframe" src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                            title="YouTube video player" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowfullscreen></iframe>
-                                    </a>
-                                @endif --}}
                                 @include('layouts.front.image-video-show', $news = $news)
                                 <div class="post--info">
-                                    {{-- <ul class="nav meta">
-                                        <li>
-                                            <a href="#">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
-                                        </li>
-                                    </ul> --}}
                                     <div class="title">
                                         <h3 class="h4">
                                             @php

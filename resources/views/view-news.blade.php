@@ -209,33 +209,6 @@
                                 </a>
                             </div>
                         </div>
-                        {{-- <div class="widget">
-                            <div class="widget--title">
-                                <h2 class="h4">Get Newsletter</h2>
-                                <i class="icon fa fa-envelope-open-o"></i>
-                            </div>
-                            <div class="subscribe--widget">
-                                <div class="content">
-                                    <p>Subscribe to our newsletter to get latest news, popular news and exclusive
-                                        updates.</p>
-                                </div>
-                                <form
-                                    action="https://themelooks.us13.list-manage.com/subscribe/post?u=79f0b132ec25ee223bb41835f&amp;id=f4e0e93d1d"
-                                    method="post" name="mc-embedded-subscribe-form" target="_blank"
-                                    data-form="mailchimpAjax">
-                                    <div class="input-group">
-                                        <input type="email" name="EMAIL" placeholder="E-mail address"
-                                            class="form-control" autocomplete="off" required>
-                                        <div class="input-group-btn">
-                                            <button type="submit" class="btn btn-lg btn-default active">
-                                                <i class="fa fa-paper-plane-o"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="status"></div>
-                                </form>
-                            </div>
-                        </div> --}}
                         <div class="widget">
                             <div class="widget--title">
                                 <h2 class="h4">Featured News</h2>
@@ -247,18 +220,6 @@
                                         <li>
                                             <div class="post--item post--layout-3">
                                                 <div class="post--img">
-                                                    {{-- @if ($news->photo_or_video == 'photo')
-                                                        <a href="#" class="thumb">
-                                                            <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}">
-                                                        </a>
-                                                    @else
-                                                        <a href="#" class="thumb">
-                                                            <iframe src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                                                title="YouTube video player" class="iframe" frameborder="0"
-                                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                                allowfullscreen></iframe>
-                                                        </a>
-                                                    @endif --}}
                                                     @include('layouts.front.image-video-show', $news = $news)
                                                     <div class="post--info">
                                                         <ul class="nav meta">
@@ -270,7 +231,6 @@
                                                             <h3 class="h4">
                                                                 @php
                                                                     $cat_array = json_decode($news->category);
-                                                                    // dump($cat_array[0]);
                                                                 @endphp
                                                                 <a href="{{route($cat_array[0],[$other->news_slug])}}" class="btn-link">{{$news->news_title}} </a>
                                                             </h3>
@@ -328,18 +288,6 @@
                                         <li>
                                             <div class="post--item post--layout-3">
                                                 <div class="post--img">
-                                                    {{-- @if ($news->photo_or_video == 'photo')
-                                                        <a href="#" class="thumb">
-                                                            <img src="{{asset($news->image)}}" alt="{{$news->news_slug}}">
-                                                        </a>
-                                                    @else
-                                                        <a href="#" class="thumb">
-                                                            <iframe src="https://www.youtube.com/embed/{{$news->youtube_url}}"
-                                                                title="YouTube video player" class="iframe" frameborder="0"
-                                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                                allowfullscreen></iframe>
-                                                        </a>
-                                                    @endif --}}
                                                     @include('layouts.front.image-video-show', $news = $news)
                                                     <div class="post--info">
                                                         <ul class="nav meta">
@@ -386,18 +334,12 @@
             autoPlay:true
         });
     });
-
-
     document.addEventListener('DOMContentLoaded', function() {
     const sendBtn = document.querySelector('.send-btn');
     const socialIcons = document.querySelector('.social-icons');
-
     sendBtn.addEventListener('click', () => {
-        // Toggle the visibility of social icons
         socialIcons.style.display = socialIcons.style.display === 'block' ? 'none' : 'block';
     });
-
-    // Close social icons when clicking outside of them or the send button
     document.addEventListener('click', (event) => {
         if (!socialIcons.contains(event.target) && !sendBtn.contains(event.target)) {
             socialIcons.style.display = 'none';

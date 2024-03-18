@@ -79,14 +79,6 @@
                             <h1 class="h1">
                                 <a href="{{route('index')}}" class="btn-link">
                                     <img src="{{ asset('fornt-asset') }}/img/logo.png" alt="USNews Logo">
-                                    {{-- <h2><b>India</b><span
-                                            style="text-transform: uppercase;
-                                background: #db0c0c;
-                                color: #fff;
-                                padding: 2px 6px;
-                                font-size: 24px;margin-left: 6px;">Tomorrow</span>
-                                    </h2>
-                                    <span class="hidden">Logo</span> --}}
                                 </a>
                             </h1>
                         </div>
@@ -114,23 +106,9 @@
         </div>
     </div>
 </header>
-{{-- <div class="zoom-in-zoom-out">BREAKIBG NEWS</div> --}}
 <div class="reveal-container">
     <h1 class="reveal-text">BREAKING NEWS</h1>
 </div>
-{{-- <div class="posts--filter-bar style--1 hidden-xs">
-    <div class="container">
-        <ul class="nav">
-            @foreach ($sub_menu as $sub)
-                <li>
-                    <a href="{{route('news.'.$sub->slug)}}">
-                        <span>{{$sub->name}}</span>
-                    </a>
-                </li>
-            @endforeach
-        </ul>
-    </div>
-</div> --}}
 
 
 

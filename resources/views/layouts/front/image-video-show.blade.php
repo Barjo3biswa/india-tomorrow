@@ -1,9 +1,7 @@
 @php
     $cat_array = json_decode($news->category);
     $test = $news->youtube_url;
-
     $position = strpos($test, 'si');
-    // dump($news);
     if ($position !== false) {
         $substring = substr($test, 0, $position);
         if (substr($substring, -1) === '?') {

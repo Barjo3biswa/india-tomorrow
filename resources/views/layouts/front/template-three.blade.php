@@ -23,7 +23,6 @@
                                         <a href="{{route($cat_array[0],[$news->news_slug])}}" class="btn-link">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}{{$key3}}</a>
                                     </h3>
                                     <p>{{extractCharacter($news->news_title, 60)}}</p>
-                                    {{-- <p>{!!text_rank($news->description)!!}</p> --}}
                                 </div>
                             </div>
                         </div>
@@ -31,7 +30,6 @@
                 </li>
                 @else
                     @if ($key3==1)
-                    {{-- {{dump("open")}} --}}
                         <li class="col-md-6">
                             <ul class="nav row">
                                 <li class="col-xs-12 hidden-md hidden-lg">
@@ -59,11 +57,7 @@
                                     </div>
                                     <hr class="divider">
                                 </li>
-                                {{-- <li class="col-xs-12">
-                                    <hr class="divider">
-                                </li> --}}
                     @if ($key3==($section->contents($section->slug)->count()-1))
-                    {{-- {{dump("closed")}} --}}
                             </ul>
                         </li>
                     @endif
