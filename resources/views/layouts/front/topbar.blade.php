@@ -106,6 +106,7 @@
         </div>
     </div>
 </header>
+
 <div class="container-fluid">
     <div class="reveal-container">
         <h1 class="reveal-text">BREAKING NEWS</h1>
