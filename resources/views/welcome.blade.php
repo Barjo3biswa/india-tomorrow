@@ -264,7 +264,7 @@
                     </div>
                 </div>
             </div>
-            <div class="main--sidebar col-md-4 col-sm-5 ptop--30 pbottom--30 right-sidebar-inner" data-sticky-content="true"
+            <div class="main--sidebar col-md-4 col-sm-5 ptop--30 pbottom--30 " data-sticky-content="true"
                 style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
                 <div class="sticky-content-inner"
                     style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">

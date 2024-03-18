@@ -201,7 +201,7 @@
                 </div>
 
                 <div class="main--sidebar col-md-4 ptop--30 pbottom--30" data-sticky-content="true">
-                    <div class="sticky-content-inner">
+                    <div class="sticky-content-inner right-sidebar-inner">
                         <div class="widget">
                             <div class="ad--widget">
                                 <a href="#">
