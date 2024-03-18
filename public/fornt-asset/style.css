@@ -6416,6 +6416,7 @@ body {
 .right-sidebar-home .post--img .thumb {
     margin-right: 20px;
 }
+.right-sidebar-home .post--info .meta > li {margin-top:4px;}
   @media (min-width: 1200px){
     .container {
         width: 1270px !important;
