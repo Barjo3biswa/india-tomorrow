@@ -92,7 +92,7 @@
                 </div>
             </div>
             <div class="main--sidebar col-md-4 col-sm-5 ptop--30 pbottom--30" data-sticky-content="true">
-                <div class="sticky-content-inner">
+                <div class="sticky-content-inner right-sidebar-home">
                     <div class="widget">
                         @foreach ($sub_news_section as $section)
                             @if ($section->contents($section->slug)->count()>0)
