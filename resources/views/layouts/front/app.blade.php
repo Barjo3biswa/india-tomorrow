@@ -177,14 +177,14 @@
     {{-- <script src="{{ asset('fornt-asset') }}/js/jquery.hoverIntent.min.js"></script> --}}
     {{-- <script src="{{ asset('fornt-asset') }}/js/jquery.marquee.min.js"></script> --}}
     {{-- <script src="{{ asset('fornt-asset') }}/js/jquery.validate.min.js"></script> --}}
-    {{-- <script src="{{ asset('fornt-asset') }}/js/isotope.min.js"></script> --}}
+    {{-- <script src="{{ asset('fornt-asset') }}/js/isotope.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/resizesensor.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/theia-sticky-sidebar.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/jquery.zoom.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/jquery.barrating.min.js"></script>
-    <script src="{{ asset('fornt-asset') }}/js/jquery.countdown.min.js"></script>
+    <script src="{{ asset('fornt-asset') }}/js/jquery.countdown.min.js"></script> --}}
     <script src="{{ asset('fornt-asset') }}/js/retina.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    {{-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script> --}}
     <script src="{{ asset('fornt-asset') }}/js/main.js"></script>
 
 @yield('js')
