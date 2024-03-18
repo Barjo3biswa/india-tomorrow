@@ -9,6 +9,7 @@
     <meta name="author" content="">
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <!-- <link rel="icon" href="favicon.png" type="image/png"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700">
     <link rel="stylesheet" href="{{ asset('fornt-asset') }}/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('fornt-asset') }}/css/bootstrap.min.css">
@@ -28,6 +29,31 @@
     #st-cmp-v2{
         display: none !important;
     }
+
+    /* zoom animation start */
+    /* .zoom-in-zoom-out {
+    margin: 24px;
+    animation: zoom-in-zoom-out 2s ease-out infinite;
+    width:800px;
+    margin: 0 auto;
+    text-align:center;
+    font-size:2.6rem;
+    margin-top: 1.4rem;
+    color: #da0000;
+    }
+
+    @keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.5, 1.5);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+    } */
+
     .reveal-container {
      display: flex;
      align-items: center;
@@ -68,6 +94,12 @@
             transform: translateY(0);
         }
     }
+
+    /* zoom animation end */
+
+
+
+
     </style>
 </head>
 
@@ -146,6 +178,7 @@
                     <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
                         <div class="widget">
                             <div class="widget--title">
+                                {{-- <h2 class="h4">TRENDING TOPICS</h2> --}}
                             </div>
                             <div class="links--widget">
                                 <ul class="nav">
@@ -173,17 +206,20 @@
     <script src="{{ asset('fornt-asset') }}/js/bootstrap.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/jquery.sticky.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/jquery.hoverIntent.min.js"></script>
-    <script src="{{ asset('fornt-asset') }}/js/jquery.marquee.min.js" async></script>
+    <script src="{{ asset('fornt-asset') }}/js/jquery.marquee.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/jquery.validate.min.js"></script>
-    <script src="{{ asset('fornt-asset') }}/js/isotope.min.js" async></script>
-    <script src="{{ asset('fornt-asset') }}/js/resizesensor.min.js" async></script>
+    <script src="{{ asset('fornt-asset') }}/js/isotope.min.js"></script>
+    <script src="{{ asset('fornt-asset') }}/js/resizesensor.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/theia-sticky-sidebar.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/jquery.zoom.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/jquery.barrating.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/jquery.countdown.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/retina.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
     <script src="{{ asset('fornt-asset') }}/js/main.js"></script>
+
 @yield('js')
+
 <script>
     function myfunction(id, news_id){
         var html = `<iframe width="100%" height="315" src="https://www.youtube.com/embed/`+id+`"
@@ -205,6 +241,7 @@
         });
 
     }
+
 </script>
 </body>
 
