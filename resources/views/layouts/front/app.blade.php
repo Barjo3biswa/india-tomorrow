@@ -176,7 +176,7 @@
     <script src="{{ asset('fornt-asset') }}/js/jquery.sticky.min.js"></script>
     {{-- <script src="{{ asset('fornt-asset') }}/js/jquery.hoverIntent.min.js"></script> --}}
     {{-- <script src="{{ asset('fornt-asset') }}/js/jquery.marquee.min.js"></script> --}}
-    <script src="{{ asset('fornt-asset') }}/js/jquery.validate.min.js"></script>
+    {{-- <script src="{{ asset('fornt-asset') }}/js/jquery.validate.min.js"></script> --}}
     <script src="{{ asset('fornt-asset') }}/js/isotope.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/resizesensor.min.js"></script>
     <script src="{{ asset('fornt-asset') }}/js/theia-sticky-sidebar.min.js"></script>
