@@ -54,7 +54,7 @@ function text_rank($text, $num_sentences = 2) {
     // Get the first 10 words from the summary
     $summary_words = explode(" ", $summary);
     $summary_first_10_words = implode(" ", array_slice($summary_words, 0, 20));
-
+    $summary_first_10_words = strip_tags($summary_first_10_words);
     return $summary_first_10_words;
 
 }
