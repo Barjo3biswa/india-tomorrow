@@ -84,14 +84,14 @@
                         </div>
                     </div>
                 </div>
-                <form action="#" class="header--search-form float--right" data-form="validate"
+                {{-- <form action="#" class="header--search-form float--right" data-form="validate"
                     novalidate="novalidate">
                     <input type="search" name="search" placeholder="Search..."
                         class="header--search-control form-control" required="" aria-required="true">
                     <button type="submit" class="header--search-btn btn">
                         <i class="header--search-icon fa fa-search"></i>
                     </button>
-                </form>
+                </form> --}}
                 <div id="headerNav" class="navbar-collapse collapse float--right">
                     <ul class="header--menu-links nav navbar-nav" data-trigger="hoverIntent">
                         <li>
