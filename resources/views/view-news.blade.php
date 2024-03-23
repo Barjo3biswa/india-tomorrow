@@ -16,7 +16,8 @@
     @if ($news->photo_or_video == 'photo')
         <meta property="og:image" content="{{ asset($news->image) }}">
     @else
-        <img src="https://img.youtube.com/vi/{{ $substring }}/0.jpg" alt="$cat_array[0]" width="600" height="300">
+        <meta property="og:image" content="https://img.youtube.com/vi/{{ $substring }}/0.jpg">
+        {{-- <img src="https://img.youtube.com/vi/{{ $substring }}/0.jpg" alt="$cat_array[0]" width="600" height="300"> --}}
         {{-- <meta property="og:video" content="https://www.youtube.com/embed/{{ $news->youtube_url }}"> --}}
     @endif
     <meta property="og:type" content="website">
