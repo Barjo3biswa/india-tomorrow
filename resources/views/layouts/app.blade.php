@@ -8,17 +8,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="description" content="India-Tomorrow-Admin">
-    <meta name="author" content="web.com.(India)">
-    <meta property="og:title" content="@yield('og_title', 'Your Website Title')" />
-    <meta property="og:description" content="@yield('og_description', 'Your Website Description')" />
-    <meta property="og:image" content="@yield('og_image', 'https://example.com/your-image.jpg')" />
-    <meta property="og:url" content="@yield('og_url', request()->fullUrl())" />
-    <meta property="og:type" content="website" />
-    {{-- @yield('shareable') --}}
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
     <link rel="shortcut icon" href="favicon.ico">
+
     <!-- FontAwesome JS-->
     <script defer src="{{ asset('assets') }}/plugins/fontawesome/js/all.min.js"></script>
+
     <!-- App CSS -->
     <link id="theme-style" rel="stylesheet" href="{{ asset('assets') }}/css/portal.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />

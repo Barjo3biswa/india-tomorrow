@@ -9,6 +9,11 @@
     <meta name="author" content="">
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <meta property="og:title" content="@yield('og_title', 'Your Website Title')" />
+    <meta property="og:description" content="@yield('og_description', 'Your Website Description')" />
+    <meta property="og:image" content="@yield('og_image', 'https://example.com/your-image.jpg')" />
+    <meta property="og:url" content="@yield('og_url', request()->fullUrl())" />
+    <meta property="og:type" content="website" />
     <!-- <link rel="icon" href="favicon.png" type="image/png"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700">
     <link rel="stylesheet" href="{{ asset('fornt-asset') }}/css/font-awesome.min.css">
