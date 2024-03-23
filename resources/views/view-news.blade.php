@@ -1,5 +1,5 @@
 @extends('layouts.front.app')
-@section('shareable')
+{{-- @section('shareable')
     <meta property="og:title" content="{{$news->news_title}}">
     <meta property="og:description" content="{{$news->news_title}}">
     @if ($news->photo_or_video == 'photo')
@@ -7,9 +7,14 @@
     @else
         <meta property="og:image" content="https://img.youtube.com/vi/{{ $substring }}/0.jpg">
     @endif
-    {{-- <meta property="og:url" content="Your Page URL Here"> --}}
     <meta property="og:type" content="website">
-@endsection
+@endsection --}}
+
+@section('og_title', '{{$news->news_title}}')
+@section('og_description', '{{$news->news_title}}')
+@section('og_image', '{{ asset($news->image) }}')
+@section('og_url', request()->fullUrl())
+
 @section('content')
 <div class="container">
     <div class="ad--space pd--20-0-20" style="padding-top: 2rem;">

@@ -10,12 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="India-Tomorrow-Admin">
     <meta name="author" content="web.com.(India)">
-    <meta property="og:title" content="Your Page Title Here">
-    <meta property="og:description" content="Your Page Description Here">
-    <meta property="og:image" content="Your Image URL Here">
-    <meta property="og:url" content="Your Page URL Here">
-    <meta property="og:type" content="website">
-    @yield('shareable')
+    <meta property="og:title" content="@yield('og_title', 'Your Website Title')" />
+    <meta property="og:description" content="@yield('og_description', 'Your Website Description')" />
+    <meta property="og:image" content="@yield('og_image', 'https://example.com/your-image.jpg')" />
+    <meta property="og:url" content="@yield('og_url', request()->fullUrl())" />
+    <meta property="og:type" content="website" />
+    {{-- @yield('shareable') --}}
     <link rel="shortcut icon" href="favicon.ico">
     <!-- FontAwesome JS-->
     <script defer src="{{ asset('assets') }}/plugins/fontawesome/js/all.min.js"></script>
