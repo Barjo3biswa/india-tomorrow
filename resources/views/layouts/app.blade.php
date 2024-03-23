@@ -8,9 +8,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @yield('shareable')
     <meta name="description" content="India-Tomorrow-Admin">
     <meta name="author" content="web.com.(India)">
+    @yield('shareable')
     <link rel="shortcut icon" href="favicon.ico">
 
     <!-- FontAwesome JS-->
