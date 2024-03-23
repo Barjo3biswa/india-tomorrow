@@ -6,7 +6,7 @@
         <meta property="og:image" content="{{ asset($news->image) }}">
     @else
         {{-- <meta property='og:video' content='https://www.youtube.com/v/BQBjVr1iHH4' /> --}}
-        <meta property="og:image" content="https://www.youtube.com/embed/{{ $substring }}">
+        <meta property="og:video" content="https://www.youtube.com/embed/{{ $news->youtube_url }}">
     @endif
     <meta property="og:type" content="website">
     <meta property="og:url" content="@yield('og_url', request()->fullUrl())" />
