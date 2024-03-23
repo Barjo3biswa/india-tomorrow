@@ -9,7 +9,6 @@
     @endif
     {{-- <meta property="og:url" content="Your Page URL Here"> --}}
     <meta property="og:type" content="website">
-
 @endsection
 @section('content')
 <div class="container">

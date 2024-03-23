@@ -10,12 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="India-Tomorrow-Admin">
     <meta name="author" content="web.com.(India)">
+    <meta property="og:title" content="Your Page Title Here">
+    <meta property="og:description" content="Your Page Description Here">
+    <meta property="og:image" content="Your Image URL Here">
+    <meta property="og:url" content="Your Page URL Here">
+    <meta property="og:type" content="website">
     @yield('shareable')
     <link rel="shortcut icon" href="favicon.ico">
-
     <!-- FontAwesome JS-->
     <script defer src="{{ asset('assets') }}/plugins/fontawesome/js/all.min.js"></script>
-
     <!-- App CSS -->
     <link id="theme-style" rel="stylesheet" href="{{ asset('assets') }}/css/portal.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
