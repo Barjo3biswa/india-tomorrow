@@ -1,14 +1,20 @@
 @extends('layouts.front.app')
 @section('shareable')
 @if ($news->photo_or_video == 'photo')
-    <a href="{{ route($cat_array[0], [$news->news_slug]) }}" class="thumb">
+    {{-- <a href="{{ route($cat_array[0], [$news->news_slug]) }}" class="thumb">
         <img src="{{ asset($news->image) }}" alt="{{ $news->news_slug }}" width="600" height="300">
-    </a>
+    </a> --}}
+    <meta property="og:title" content="How to Become an SEO Expert (8 Steps)" />
+    <meta property="og:description" content="Get from SEO newbie to SEO pro in 8 simple steps." />
+    <meta property="og:image" content="{{ asset($news->image) }}" />
 @else
-    <a href="#" class="thumb" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="myfunction('{{ $news->youtube_url }}', '{{ $news->id }}')">
+    {{-- <a href="#" class="thumb" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="myfunction('{{ $news->youtube_url }}', '{{ $news->id }}')">
         <img src="https://img.youtube.com/vi/{{ $substring }}/0.jpg" alt="$cat_array[0]" width="600" height="300">
         <div class="play-button"></div>
-    </a>
+    </a> --}}
+    <meta property="og:title" content="How to Become an SEO Expert (8 Steps)" />
+    <meta property="og:description" content="Get from SEO newbie to SEO pro in 8 simple steps." />
+    <meta property="og:image" content="https://img.youtube.com/vi/{{ $substring }}/0.jpg" />
 @endif
 @endsection
 @section('content')
