@@ -1,12 +1,23 @@
 @extends('layouts.front.app')
 @section('shareable')
+    @php
+        $cat_array = json_decode($news->category);
+        $test = $news->youtube_url;
+        $position = strpos($test, 'si');
+        if ($position !== false) {
+            $substring = substr($test, 0, $position);
+            if (substr($substring, -1) === '?') {
+                $substring = substr($substring, 0, -1);
+            }
+        }
+    @endphp
     <meta property="og:title" content="{{$news->news_title}}">
     <meta property="og:description" content="{{$news->news_title}}">
     @if ($news->photo_or_video == 'photo')
         <meta property="og:image" content="{{ asset($news->image) }}">
     @else
-        {{-- <meta property='og:video' content='https://www.youtube.com/v/BQBjVr1iHH4' /> --}}
-        <meta property="og:video" content="https://www.youtube.com/embed/{{ $news->youtube_url }}">
+        <img src="https://img.youtube.com/vi/{{ $substring }}/0.jpg" alt="$cat_array[0]" width="600" height="300">
+        {{-- <meta property="og:video" content="https://www.youtube.com/embed/{{ $news->youtube_url }}"> --}}
     @endif
     <meta property="og:type" content="website">
     <meta property="og:url" content="@yield('og_url', request()->fullUrl())" />
