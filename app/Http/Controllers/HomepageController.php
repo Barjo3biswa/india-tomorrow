@@ -101,6 +101,10 @@ class HomepageController extends Controller
         return view('about-us');
     }
 
+    public function contactUs(){
+        return view('contact-us');
+    }
+
     public function HitCount(Request $request){
         $prev_count = HitCount::where('news_id', $request->news_id)->where('ip_address',$request->ip())->first();
         if($prev_count){

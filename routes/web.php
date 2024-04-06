@@ -28,6 +28,9 @@ foreach($news_section as $section){
 }
 Route::get('about-us', [App\Http\Controllers\HomepageController::class, 'aboutUs'])->name('about-us');
 
+Route::get('contact-us', [App\Http\Controllers\HomepageController::class, 'contactUs'])->name('contact-us');
+
+
 Route::get('hit-count', [App\Http\Controllers\HomepageController::class, 'HitCount'])->name('hit-count');
 
 
