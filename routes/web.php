@@ -50,5 +50,6 @@ Route::get('/add-sub-category/{id}', [App\Http\Controllers\HomeController::class
 Route::get('/news-edit/{id}', [App\Http\Controllers\HomeController::class, 'newsEdit'])->name('admin.news-edit');
 Route::get('/news-delete/{id}', [App\Http\Controllers\HomeController::class, 'newsDelete'])->name('admin.news-delete');
 Route::get('/news-publish/{id}', [App\Http\Controllers\HomeController::class, 'newsPublish'])->name('admin.news-publish');
-// settings-store
 Route::post('/settings-store', [App\Http\Controllers\HomeController::class, 'settingsStore'])->name('admin.settings-store');
+
+Route::get('/advertisement', [App\Http\Controllers\HomeController::class, 'advertisement'])->name('admin.advertisement');

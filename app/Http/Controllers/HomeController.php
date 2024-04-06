@@ -298,4 +298,8 @@ class HomeController extends Controller
         }
     }
 
+    public function advertisement(){
+        dd('ok');
+    }
+
 }

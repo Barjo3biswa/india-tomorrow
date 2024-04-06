@@ -49,7 +49,7 @@
                                                 <div class="title">
                                                     <h3 class="h4">
                                                         <a href="#"
-                                                            class="btn-link">{{$news->news_title}}</a>
+                                                            class="btn-link">{{extractCharacter($news->news_title, 60)}}</a>
                                                     </h3>
                                                 </div>
                                             </div>
