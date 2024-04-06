@@ -12,10 +12,10 @@
             <li class="breadcrumb-item current"><a href="#">About Us</a></li>
         </ol>
     </nav>
+    @include('layouts.front.scrolling-news')
     <div class="main-content--section pbottom--30-0">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-1"></div>
                 <div class="main--content col-md-10 col-sm-7">
                     <p>
                         India Tomorrow is a education news portel which focus only on catering education updates of NorthEast and India.
