@@ -12,7 +12,7 @@
             <li class="breadcrumb-item current"><a href="#">About Us</a></li>
         </ol>
     </nav>
-    <div class="main-content--section pbottom--30">
+    <div class="main-content--section pbottom--30-0">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-1"></div>
