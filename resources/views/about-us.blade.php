@@ -13,6 +13,7 @@
         </ol>
     </nav>
     @include('layouts.front.scrolling-news')
+    <br><br>
     <div class="main-content--section pbottom--30-0">
         <div class="container-fluid">
             <div class="row">
@@ -28,5 +29,6 @@
             </div>
         </div>
     </div>
+    <br><br>
 </div>
 @endsection
