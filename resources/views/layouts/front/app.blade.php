@@ -132,6 +132,11 @@
                             <div class="links--widget">
                                 <ul class="nav">
                                     <li><a href="#" class="fa-angle-right">UGC</a></li>
+                                    <li><a href="#" class="fa-angle-right">UPSC</a></li>
+                                    <li><a href="#" class="fa-angle-right">JAMIAMILIA</a></li>
+                                    <li><a href="#" class="fa-angle-right">DELHI University</a></li>
+                                    <li><a href="#" class="fa-angle-right">IIT GUWAHATI</a></li>
+                                    <li><a href="#" class="fa-angle-right">INDIA INSTITUTE BANGLORE</a></li>
                                     <li><a href="#" class="fa-angle-right">USTM</a></li>
                                     <li><a href="#" class="fa-angle-right">Gauhati University</a></li>
                                     <li><a href="#" class="fa-angle-right">Tezpur University</a></li>
