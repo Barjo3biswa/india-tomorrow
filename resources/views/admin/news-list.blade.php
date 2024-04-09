@@ -35,7 +35,7 @@
                                     <div class="app-card app-card-orders-table shadow-sm mb-5">
                                         <div class="app-card-body">
                                             <div class="table-responsive">
-                                                <table class="table app-table-hover mb-0 text-left">
+                                                <table class="table app-table-hover mb-0 text-left" id="dtExample">
                                                     <thead>
                                                         <tr>
                                                             <th class="cell">News Title</th>
@@ -88,7 +88,7 @@
 
                                             </div>
                                             <br>
-                                            {{ $list->links() }}
+                                            {{-- {{ $list->links() }} --}}
                                         </div>
                                     </div>
                                 </div>
@@ -101,5 +101,11 @@
 @endsection
 @section('js')
 <script>
+    $(document).ready( function () {
+        $('#dtExample').DataTable({
+            "lengthMenu": [ [50, 100, -1], [50, 100, "All"] ], // Define custom length menu
+            "pageLength": 100, // Set default page length to 100
+        });
+    } );
 </script>
 @endsection

@@ -159,7 +159,7 @@ class HomeController extends Controller
     }
 
     public function newsList(){
-        $list = newsContent::orderBy('id','DESC')->paginate(100);
+        $list = newsContent::orderBy('id','DESC')->get();
         return view("admin.news-list", compact('list'));
     }
 
