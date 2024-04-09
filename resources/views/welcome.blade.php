@@ -101,7 +101,7 @@
                                 </div>
                                 <div class="post--items post--items-3" data-ajax-content="outer">
                                     <ul class="nav" data-ajax-content="inner">
-                                        @foreach ($section->contents($section->slug)->take(10) as $news)
+                                        @foreach ($section->contents($section->slug)->take(5) as $news)
                                         <li>
                                             <div class="post--item post--layout-3">
                                                 <div class="post--img">
