@@ -25,6 +25,7 @@
     @yield('css')
 
     <style>
+
     .popup_popup {
         display: none !important;
     }
@@ -169,8 +170,8 @@
                             <div class="links--widget">
                                 <ul class="nav">
                                     <li><a href="{{route('about-us')}}" class="fa-angle-right">About Us</a></li>
-                                    <li><a href="#" class="fa-angle-right">Contact Us</a></li>
-                                    <li><a href="#" class="fa-angle-right">Write to Us</a></li>
+                                    <li><a href="{{route('contact-us')}}" class="fa-angle-right">Contact Us</a></li>
+                                    <li><a href="#{{-- {{route('contact-us')}} --}}" class="fa-angle-right">Write to Us</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactMessage;
 use App\Models\HitCount;
 use App\Models\newsContent;
 use App\Models\newsSection;
@@ -103,6 +104,17 @@ class HomepageController extends Controller
 
     public function contactUs(){
         return view('contact-us');
+    }
+
+    public function contactSave(Request $request){
+        // dd($request->all());
+        ContactMessage::Create([
+           'name' => $request->name,
+           'email'=> $request->email,
+           'phone'=> $request->phone,
+           'message'=> $request->message,
+        ]);
+        return redirect()->back()->with('success','Successfully Submited your responses');
     }
 
     public function HitCount(Request $request){

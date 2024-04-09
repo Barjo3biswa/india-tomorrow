@@ -372,16 +372,22 @@
             <li class="breadcrumb-item current"><a href="#">Contact Us</a></li>
         </ol>
     </nav>
+    @include('layouts.front.scrolling-news')
 
+    @if(Session::has('success'))
+        <div class="alert alert-success" role="alert">
+            {{ Session::get('success') }}
+        </div>
+    @endif
     <div class="contact--section pd--30-0">
         <div class="container">
             <div class="form">
                 <div class="contact-info">
                 <h3 class="title">Let's get in touch</h3>
-                <p class="text">
+                {{-- <p class="text">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
                     dolorum adipisci recusandae praesentium dicta!
-                </p>
+                </p> --}}
 
                 <div class="info">
                     <div class="information">
@@ -422,7 +428,8 @@
                 <span class="circle one"></span>
                 <span class="circle two"></span>
 
-                <form action="index.html" autocomplete="off">
+                <form action="{{route('contact-submit')}}" method="post" autocomplete="off">
+                    @csrf
                     <h3 class="title">Contact us</h3>
                     <div class="input-container">
                     <input type="text" name="name" class="input" />
@@ -451,4 +458,27 @@
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+<script>
+    const inputs = document.querySelectorAll(".input");
+
+    function focusFunc() {
+    let parent = this.parentNode;
+    parent.classList.add("focus");
+    }
+
+    function blurFunc() {
+    let parent = this.parentNode;
+    if (this.value == "") {
+        parent.classList.remove("focus");
+    }
+    }
+
+    inputs.forEach((input) => {
+    input.addEventListener("focus", focusFunc);
+    input.addEventListener("blur", blurFunc);
+    });
+
+</script>
 @endsection

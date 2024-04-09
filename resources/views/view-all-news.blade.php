@@ -123,7 +123,25 @@
                                 </div>
                             @endforeach
                         </div>
+
                         <div class="widget">
+                            <div class="widget--title">
+                                <h2 class="h4">Featured News</h2>
+                            </div>
+                            @foreach ($featured_news as $news)
+                                <div class="profile--widget">
+                                    <div class="contributor--item style--1">
+                                        @include('layouts.front.image-video-show', $news = $news)
+                                        <div class="name">
+                                            <h3 class="h4">
+                                                <a href="{{route($slug,[$news->news_slug])}}" class="btn-link">{{$news->news_title}}..</a>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        {{-- <div class="widget">
                             <div class="widget--title">
                                 <h2 class="h4">Featured News</h2>
                                 <i class="icon fa fa-newspaper-o"></i>
@@ -155,7 +173,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="widget">
                             <div class="widget--title">
                                 <h2 class="h4">Advertisement</h2>
