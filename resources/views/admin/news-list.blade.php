@@ -42,6 +42,7 @@
                                                             <th class="cell">Date</th>
                                                             <th class="cell">Reported By</th>
                                                             <th class="cell">Category Under</th>
+                                                            <th class="cell">Read Count</th>
                                                             <th class="cell">Status</th>
                                                             <th class="cell">Action</th>
                                                         </tr>
@@ -60,6 +61,7 @@
                                                                     <span class="badge bg-secondary">{{$cat}}</span>
                                                                     @endforeach
                                                                 </td>
+                                                                <td>{{$li->hit_count->count()}}</td>
                                                                 <td>@include('admin.common.status')</td>
                                                                 <td>
                                                                     <div class="app-utility-item app-user-dropdown dropdown">
@@ -83,7 +85,10 @@
                                                         @endforeach
                                                     </tbody>
                                                 </table>
+
                                             </div>
+                                            <br>
+                                            {{ $list->links() }}
                                         </div>
                                     </div>
                                 </div>

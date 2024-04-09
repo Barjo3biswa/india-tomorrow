@@ -19,7 +19,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home');
+        $list = newsSection::get();
+        return view('home', compact('list'));
     }
 
 
@@ -158,7 +159,7 @@ class HomeController extends Controller
     }
 
     public function newsList(){
-        $list = newsContent::get();
+        $list = newsContent::orderBy('id','DESC')->paginate(100);
         return view("admin.news-list", compact('list'));
     }
 
