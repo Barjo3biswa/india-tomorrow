@@ -119,8 +119,8 @@
                                     <li><i class="fa fa-map"></i><span>Guwahati, Assam</span>
                                     </li>
                                     <li><i class="fa fa-envelope-o"></i><a
-                                            href="mailto:example@indiatomorrow.com">example@indiatomorrow.com</a></li>
-                                    <li><i class="fa fa-phone"></i><a href="tel:123456789">123456789</a></li>
+                                            href="mailto:example@indiatomorrow.com">itliveguwahati@gmail.com</a></li>
+                                    <li><i class="fa fa-phone"></i><a href="tel:8486888694">+91 8486888694</a></li>
                                 </ul>
                             </div>
                         </div>

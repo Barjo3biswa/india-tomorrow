@@ -57,3 +57,4 @@ Route::get('/news-publish/{id}', [App\Http\Controllers\HomeController::class, 'n
 Route::post('/settings-store', [App\Http\Controllers\HomeController::class, 'settingsStore'])->name('admin.settings-store');
 
 Route::get('/advertisement', [App\Http\Controllers\HomeController::class, 'advertisement'])->name('admin.advertisement');
+Route::get('/create-add', [App\Http\Controllers\HomeController::class, 'createAdd'])->name('admin.create-add');

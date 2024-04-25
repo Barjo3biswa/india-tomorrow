@@ -300,7 +300,12 @@ class HomeController extends Controller
     }
 
     public function advertisement(){
-        dd('ok');
+        // dd('ok');
+        return view('admin.adv-list');
+    }
+
+    public function createAdd(){
+        return view('admin.create-adv');
     }
 
 }

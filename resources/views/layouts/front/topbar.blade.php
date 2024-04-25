@@ -78,7 +78,7 @@
                         <div class="header--logo float--left float--sm-none text-sm-center">
                             <h1 class="h1">
                                 <a href="{{route('index')}}" class="btn-link">
-                                    <img src="{{ asset('fornt-asset') }}/img/logo.png" alt="USNews Logo">
+                                    <img src="{{ asset('fornt-asset') }}/img/logo1.png" alt="USNews Logo">
                                 </a>
                             </h1>
                         </div>

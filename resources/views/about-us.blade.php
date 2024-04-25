@@ -19,10 +19,13 @@
             <div class="row">
                 <div class="main--content col-md-12 col-sm-12">
                     <p>
-                        India Tomorrow is a education news portel which focus only on catering education updates of NorthEast and India.
-                        We as a team promise to update and give all accurate information on education. India Tomorrow can help you in
-                        taking decisions regarding career and future plans. On your video section we have speakers who speaks on every
-                        particular academic plans. Also we cover stories of every education aspect of tye society.
+                        Welcome to "India Tomorrow," the premier educational news portal of the North East, powered by ERD Foundation.
+                        Committed to delivering accurate and insightful updates, we are your go-to source for educational news from the
+                        vibrant region. At "India Tomorrow," we understand the significance of informed decisions in shaping your career
+                        and future endeavors. Our comprehensive coverage includes regular educational news, special stories highlighting
+                        individual achievements, in-depth analyses of education policies, and engaging discussions on topics related to
+                        education. Explore our video section featuring expert speakers, offering valuable insights to empower your educational
+                        journey. Trust "India Tomorrow" for timely, reliable, and enriching updates.
                     </p>
                 </div>
 
