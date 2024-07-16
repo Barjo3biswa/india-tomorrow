@@ -3995,7 +3995,8 @@ body {
   .post--item .row .post--info .meta,
   .post--item.post--layout-3 .post--info .meta,
   .post--item.post--layout-4 .post--info .meta {
-    margin-top: -7px;
+    /* margin-top: -7px; */
+    margin-top: 0;
   }
   .list--widget-2 .post--item.post--layout-3 .post--info .meta,
   .list--widget-2 .post--item.post--layout-4 .post--info .meta {
@@ -4005,7 +4006,8 @@ body {
   .post--info .meta > li > span {
     padding: 0;
     font-size: 12px;
-    line-height: 20px;
+    /* line-height: 20px; */
+    line-height: 16px;
     color: #a6a6a6!important;
   }
   .post--items.post--items-2 .post--item.post--layout-2 .post--info .title {
