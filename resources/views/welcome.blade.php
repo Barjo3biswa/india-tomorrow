@@ -141,12 +141,12 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <a href="#">
-                                        <img src="https://5.imimg.com/data5/SELLER/Default/2022/2/BL/UY/TW/14357089/newspaper-ads-250x250.jpeg" alt="">
+                                        <img src="{{ asset('fornt-asset') }}/img/newspaper-ads-250x250.webp" alt="">
                                     </a>
                                 </div>
                                 <div class="col-lg-6">
                                     <a href="#">
-                                        <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/higher-education-ad-template-design-5f1fffa627c42e7bbe32dcb59346de49_screen.jpg?ts=1643693093" alt="">
+                                        <img src="{{ asset('fornt-asset') }}/img/higher-education-ad-template-design-5f1fffa627c42e7bbe32dcb59346de49_screen.jpg" alt="">
                                     </a>
 
                                 </div>
@@ -174,7 +174,7 @@
                                         <div class="post--item post--layout-1">
                                             <div class="post--img">
                                                 <a href="#" class="thumb">
-                                                    <img src="https://static.pib.gov.in/WriteReadData/userfiles/image/image0010V4F.jpg" alt=""
+                                                    <img src="{{ asset('fornt-asset') }}/img/image0010V4F.jpg" alt=""
                                                         data-rjs="2" style="height: 168px;
                                                         object-fit: cover;">
                                                 </a>
@@ -200,7 +200,7 @@
                                         <div class="post--item post--layout-1">
                                             <div class="post--img">
                                                 <a href="#" class="thumb">
-                                                    <img src="https://www.momentum.ac.in/uploaded-files/thumb-cache/things-to-expect-from-best-iit-jee-neet-coaching-in-gorakhpur377673-neet-iit-jeey36n.jpg" alt=""
+                                                    <img src="{{ asset('fornt-asset') }}/img/neet.jpg" alt=""
                                                         data-rjs="2" style="height: 168px;
                                                         object-fit: cover;">
                                                 </a>
@@ -223,7 +223,7 @@
                                         <div class="post--item post--layout-1">
                                             <div class="post--img">
                                                 <a href="#" class="thumb">
-                                                    <img src="https://www.mapsofindia.com/ci-moi-images/my-india/2017/04/national-career-service.jpg" alt=""
+                                                    <img src="{{ asset('fornt-asset') }}/img/national-career-service.jpg" alt=""
                                                         data-rjs="2" style="height: 168px;
                                                         object-fit: cover;">
                                                 </a>
@@ -275,12 +275,12 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <a href="#">
-                                        <img src="https://newspaperads.ads2publish.com/wp-content/uploads/2018/04/education-worldwide-india-education-fair-ad-delhi-times-14-04-2018.png" alt="" data-rjs="2">
+                                        <img src="{{ asset('fornt-asset') }}/img/add-1.png" alt="" data-rjs="2">
                                     </a>
                                 </div>
                                 <div class="col-sm-6">
                                     <a href="#">
-                                        <img src="https://newspaperads.ads2publish.com/wp-content/uploads/2018/04/education-worldwide-india-education-fair-ad-delhi-times-14-04-2018.png" alt="" data-rjs="2">
+                                        <img src="{{ asset('fornt-asset') }}/img/add-1.png" alt="" data-rjs="2">
                                     </a>
                                 </div>
                             </div>
