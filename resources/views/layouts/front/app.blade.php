@@ -87,11 +87,11 @@
 </head>
 
 <body>
-    <div id="preloader">
+    {{-- <div id="preloader">
         <div class="preloader bg--color-1--b" data-preloader="1">
             <div class="preloader--inner"></div>
         </div>
-    </div>
+    </div> --}}
     <div class="wrapper">
 
         @include('layouts.front.topbar')
