@@ -87,7 +87,7 @@ function fetchWeatherData()
 
 function extractCharacter($string, $length){
     $first_60_characters = substr($string, 0, $length);
-    return $first_60_characters;
+    return $first_60_characters.'...';
 }
 
 
