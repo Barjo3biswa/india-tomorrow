@@ -10,7 +10,7 @@
             {{-- <span>(Update 12 minutes ago)</span> --}}
         </div>
         <div class="news-updates--list" data-marquee="true">
-            <ul class="nav">
+            <ul class="nav breaking_scroll">
                 @foreach ($scrolling_news as $news)
                     @php
                         $cat_array = json_decode($news->category);

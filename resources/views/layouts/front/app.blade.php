@@ -54,6 +54,14 @@
         letter-spacing: 1.2px;
         font-weight: 600;
     }
+
+    .breaking_scroll {
+        display: flex;
+
+    }
+    .news-updates--list .nav.breaking_scroll li .h3 a {
+        white-space: nowrap;
+    }
     @keyframes revealAnimationContainer {
         50% {
             transform: scale(1);
