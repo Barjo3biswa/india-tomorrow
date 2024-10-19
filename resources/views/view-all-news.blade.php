@@ -35,7 +35,7 @@
                             <div class="list--widget list--widget-2">
                                 <div class="post--items post--items-3">
                                     <ul class="nav" data-ajax-content="inner">
-                                        @foreach ($trending as $news)
+                                        {{-- @foreach ($trending as $news)
                                         <li>
                                             <div class="post--item post--layout-3">
                                                 <div class="post--img">
@@ -53,7 +53,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        @endforeach
+                                        @endforeach --}}
                                     </ul>
                                 </div>
                             </div>
