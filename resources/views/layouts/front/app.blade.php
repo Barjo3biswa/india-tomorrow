@@ -117,7 +117,8 @@
                             </div>
                             <div class="about--widget">
                                 <div class="content">
-                                    <p>India Tomorrow is a education news portel which focus only on catering education updates of NorthEast and India...</p>
+                                    <p>Welcome to "India Tomorrow," the premier educational news portal of the North East, powered by ERD Foundation.
+                                        Committed to delivering accurate..</p>
                                 </div>
                                 <div class="action">
                                     <a href="{{route('about-us')}}" class="btn-link">Read More<i
