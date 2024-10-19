@@ -74,7 +74,7 @@
                                                     @include('layouts.front.image-video-show', $news = $news)
                                                 </div>
                                             </div>
-                                            <div class="col-md-8 col-sm-12 col-xs-8 col-xxs-12">
+                                            {{-- <div class="col-md-8 col-sm-12 col-xs-8 col-xxs-12">
                                                 <div class="post--info">
                                                     <ul class="nav meta">
                                                         <li>
@@ -92,7 +92,7 @@
                                                     <p>{!!text_rank($news->description)!!}...</p>
                                                 </div>
                                                 @endif
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </li>
