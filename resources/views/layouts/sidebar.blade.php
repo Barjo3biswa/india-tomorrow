@@ -1,7 +1,7 @@
 <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
     <ul class="app-menu list-unstyled accordion" id="menu-accordion">
         <li class="nav-item">
-            <a class="nav-link active" href="{{route('home')}}">
+            <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{route('home')}}">
                 <span class="nav-icon">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +16,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.create-news-section')}}">
+            <a class="nav-link {{ request()->routeIs('admin.create-news-section') ? 'active' : '' }}" href="{{route('admin.create-news-section')}}">
                 <span class="nav-icon">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-folder"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
