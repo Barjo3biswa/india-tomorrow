@@ -81,6 +81,9 @@ class HomepageController extends Controller
     public function viewAllNews(Request $request){
         $routeName = Route::currentRouteName();
         $slug = str_replace("news.", "", $routeName);
+        if($request->tags){
+            dd($request->tags);
+        }
         $all_news = newsContent::where('category', 'like', '%' . $slug . '%')->where('status','Published')->orderBy('id','DESC')->paginate(15);
         $related_news = newsContent::orderBy('id','DESC')->where('status','Published')->orderBy('id','DESC')->get()->filter(function ($section) {
             $appearance = $section->setCategory();
