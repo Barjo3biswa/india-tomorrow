@@ -116,7 +116,7 @@
                                 </li>
                                   @foreach ($hastags as $tags)
                                       <li>
-                                          <a href="{{route('news.hashtag')}}">{{$tags}}</a>
+                                        <a href="{{ route('news.hashtag', ['tag' => $tags]) }}">{{$tags}}</a>
                                       </li>
                                   @endforeach
                               </ul>
