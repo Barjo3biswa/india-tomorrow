@@ -89,6 +89,7 @@ class HomepageController extends Controller
                                         $list = $hashtags->sethashtags();
                                         return is_array($list) && array_intersect($current_list, $list);
                                     });
+            dd($all_news);
         }else{
             $all_news = newsContent::where('category', 'like', '%' . $slug . '%')->where('status','Published')->orderBy('id','DESC')->paginate(15);
         }
