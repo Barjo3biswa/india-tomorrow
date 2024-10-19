@@ -30,14 +30,14 @@
         </a>
     </div>
     <nav class="breadcrumbs-nav">
-        {{-- <ol class="breadcrumbs">
+        <ol class="breadcrumbs">
             @php
                 $route_name = Route::currentRouteName();
             @endphp
           <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
           <li class="breadcrumb-item current"><a href="{{route('news.'.$route_name)}}">{{ucfirst($route_name)}}</a></li>
 
-        </ol> --}}
+        </ol>
       </nav>
     @include('layouts.front.scrolling-news')
 
