@@ -327,7 +327,7 @@
                                                                 @php
                                                                     $cat_array = json_decode($news->category);
                                                                 @endphp
-                                                                <a href="{{route($cat_array[0],[$news->news_slug])}}" class="btn-link">{{$news->news_title}} </a>
+                                                                {{-- <a href="{{route($cat_array[0],[$news->news_slug])}}" class="btn-link">{{$news->news_title}} </a> --}}
                                                                 {{-- <a href="#" class="btn-link">{{$news->news_title}} </a> --}}
                                                             </h3>
                                                         </div>
