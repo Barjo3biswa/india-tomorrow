@@ -26,6 +26,8 @@ foreach($news_section as $section){
 foreach($news_section as $section){
     Route::get($section->slug, [App\Http\Controllers\HomepageController::class, 'viewAllNews'])->name('news.'.$section->slug);
 }
+Route::get('hashtag', [App\Http\Controllers\HomepageController::class, 'viewAllNews'])->name('news.hashtag');
+
 Route::get('about-us', [App\Http\Controllers\HomepageController::class, 'aboutUs'])->name('about-us');
 
 Route::get('contact-us', [App\Http\Controllers\HomepageController::class, 'contactUs'])->name('contact-us');
