@@ -67,12 +67,12 @@ class HomepageController extends Controller
         $featured_news = newsContent::where('status','Published')->orderBy('id','DESC')->get()->filter(function ($section) {
                                             $appearance = $section->setCategory();
                                             return is_array($appearance) && in_array('featured', $appearance);
-                                        })->take(2);
+                                        })->take(6);
         // dd($featured_news);
         $trending = newsContent::where('status','Published')->orderBy('id','DESC')->get()->filter(function ($section) {
                                     $appearance = $section->setCategory();
                                     return is_array($appearance) && in_array('just-in', $appearance);
-                                })->take(2);
+                                })->take(6);
         return view('view-news', compact('news','might_like','other_news','featured_news','trending'));
     }
 
