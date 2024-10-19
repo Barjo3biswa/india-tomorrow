@@ -17,7 +17,7 @@
                 @if($route == "news")
                     <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
                 @else
-                    <li class="breadcrumb-item current"><a href="{{route('news.'.$route)}}">{{ucfirst($route)}}</a></li>
+                    {{-- <li class="breadcrumb-item current"><a href="{{route('news.'.$route)}}">{{ucfirst($route)}}</a></li> --}}
                 @endif
             @endforeach
         </ol>
