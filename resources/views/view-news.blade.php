@@ -17,17 +17,10 @@
         <meta property="og:image" content="{{ asset($news->image) }}">
     @else
         <meta property="og:image" content="https://img.youtube.com/vi/{{ $substring }}/0.jpg">
-        {{-- <img src="https://img.youtube.com/vi/{{ $substring }}/0.jpg" alt="$cat_array[0]" width="600" height="300"> --}}
-        {{-- <meta property="og:video" content="https://www.youtube.com/embed/{{ $news->youtube_url }}"> --}}
     @endif
     <meta property="og:type" content="website">
     <meta property="og:url" content="@yield('og_url', request()->fullUrl())" />
 @endsection
-
-{{-- @section('og_title', '{{$news->news_title}}')
-@section('og_description', '{{$news->news_title}}')
-@section('og_image', '{{ asset($news->image) }}')
-@section('og_url', request()->fullUrl()) --}}
 
 @section('content')
 <div class="container">
@@ -262,7 +255,7 @@
                                                                 @php
                                                                     $cat_array = json_decode($news->category);
                                                                 @endphp
-                                                                <a href="{{route($cat_array[0],[$other->news_slug])}}" class="btn-link">{{$news->news_title}} </a>
+                                                                <a href="{{route($cat_array[0],[$news->news_slug])}}" class="btn-link">{{$news->news_title}} </a>
                                                             </h3>
                                                         </div>
                                                     </div>
@@ -327,7 +320,11 @@
                                                         </ul>
                                                         <div class="title">
                                                             <h3 class="h4">
-                                                                <a href="#" class="btn-link">{{$news->news_title}} </a>
+                                                                @php
+                                                                    $cat_array = json_decode($news->category);
+                                                                @endphp
+                                                                <a href="{{route($cat_array[0],[$news->news_slug])}}" class="btn-link">{{$news->news_title}} </a>
+                                                                {{-- <a href="#" class="btn-link">{{$news->news_title}} </a> --}}
                                                             </h3>
                                                         </div>
                                                     </div>
