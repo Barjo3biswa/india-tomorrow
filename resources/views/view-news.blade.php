@@ -188,7 +188,10 @@
                                         <div class="post--item interview-section-2 post--layout-1">
                                             <div class="post--img">
                                                 @include('layouts.front.image-video-show', $news = $other)
-                                                <a href="#" class="cat">APSC Exam</a>
+                                                @php
+                                                    $cat_array = json_decode($news->category);
+                                                @endphp
+                                                <a href="{{route('news.'.$cat_array[0])}}" class="cat">{{$cat_array[0]}}</a>
                                                 </a>
                                                 <div class="post--info">
                                                     <ul class="nav meta">
@@ -208,9 +211,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            {{-- <div class="post--content">
-                                                <p>{!!text_rank($other->description)!!}</p>
-                                            </div> --}}
                                         </div>
                                     </li>
                                     @endforeach
