@@ -83,9 +83,9 @@ class HomepageController extends Controller
         $slug = str_replace("news.", "", $routeName);
 
         if($request->tag){
-            $all_news = newsContent::orderBy('id','DESC')->get();
+            // $all_news = newsContent::orderBy('id','DESC')->get();
             $current_list = [$request->tag];
-            $all_news = $all_news->filter(function($hashtags) use($current_list){
+            $all_news = newsContent::filter(function($hashtags) use($current_list){
                                         $list = $hashtags->sethashtags();
                                         return is_array($list) && array_intersect($current_list, $list);
                                     })->orderBy('id','DESC')->paginate(15);
