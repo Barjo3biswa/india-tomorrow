@@ -84,11 +84,16 @@ class HomepageController extends Controller
 
         if($request->tag){
             $slug = 'just-in';
-            $current_list = [$request->tag]; // array of tags to filter
+            // $all_news = newsContent::orderBy('id','DESC')->orderBy('id','DESC')->paginate(15);
+            $current_list = [$request->tag];
+            // $all_news = $all_news->filter(function($hashtags) use($current_list){
+            //                             $list = $hashtags->sethashtags();
+            //                             return is_array($list) && array_intersect($current_list, $list);
+            //                         });
 
             $all_news = newsContent::orderBy('id', 'DESC')
                 ->whereHas('sethashtags', function ($query) use ($current_list) {
-                    $query->whereIn('hashtag_column', $current_list); // adjust 'hashtag_column' to your actual column name
+                    $query->whereIn('hashtags', $current_list); // adjust 'hashtag_column' to your actual column name
                 })
                 ->paginate(15);
         }else{
