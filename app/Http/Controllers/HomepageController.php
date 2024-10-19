@@ -84,7 +84,7 @@ class HomepageController extends Controller
 
         if($request->tag){
             $slug = 'just-in';
-            $all_news = newsContent::where('hashtags','like','%'.$request->tag.'%')->orderBy('id', 'DESC')->paginate(15);
+            $all_news = newsContent::where('hashtags','like','%'.$request->tag.'%')->where('status','Published')->orderBy('id', 'DESC')->paginate(15);
         }else{
             $all_news = newsContent::where('category', 'like', '%' . $slug . '%')->where('status','Published')->orderBy('id','DESC')->paginate(15);
         }
