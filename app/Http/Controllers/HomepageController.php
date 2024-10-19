@@ -83,12 +83,12 @@ class HomepageController extends Controller
         $slug = str_replace("news.", "", $routeName);
 
         if($request->tag){
-            // $all_news = newsContent::orderBy('id','DESC')->get();
+            $all_news = newsContent::orderBy('id','DESC')->orderBy('id','DESC')->paginate(15);
             $current_list = [$request->tag];
             $all_news = newsContent::filter(function($hashtags) use($current_list){
                                         $list = $hashtags->sethashtags();
                                         return is_array($list) && array_intersect($current_list, $list);
-                                    })->orderBy('id','DESC')->paginate(15);
+                                    });
         }else{
             $all_news = newsContent::where('category', 'like', '%' . $slug . '%')->where('status','Published')->orderBy('id','DESC')->paginate(15);
         }
