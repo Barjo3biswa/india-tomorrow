@@ -116,7 +116,7 @@
                                         @include('layouts.front.image-video-show', $news = $news)
                                         <div class="name">
                                             <h3 class="h4">
-                                                <a href="{{route($slug,[$news->news_slug])}}" class="btn-link">{{$news->news_title}}..</a>
+                                                {{-- <a href="{{route($slug,[$news->news_slug])}}" class="btn-link">{{$news->news_title}}..</a> --}}
                                             </h3>
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@
                                         @include('layouts.front.image-video-show', $news = $news)
                                         <div class="name">
                                             <h3 class="h4">
-                                                <a href="{{route($slug,[$news->news_slug])}}" class="btn-link">{{$news->news_title}}..</a>
+                                                {{-- <a href="{{route($slug,[$news->news_slug])}}" class="btn-link">{{$news->news_title}}..</a> --}}
                                             </h3>
                                         </div>
                                     </div>
