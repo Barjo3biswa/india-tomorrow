@@ -30,14 +30,14 @@
         </a>
     </div>
     <nav class="breadcrumbs-nav">
-        <ol class="breadcrumbs">
+        {{-- <ol class="breadcrumbs">
             @php
                 $route_name = Route::currentRouteName();
             @endphp
           <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
           <li class="breadcrumb-item current"><a href="{{route('news.'.$route_name)}}">{{ucfirst($route_name)}}</a></li>
 
-        </ol>
+        </ol> --}}
       </nav>
     @include('layouts.front.scrolling-news')
 
@@ -319,7 +319,7 @@
                                                     <div class="post--info">
                                                         <ul class="nav meta">
                                                             <li>
-                                                                {{-- <a href="#">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a> --}}
+                                                                <a href="#">{{date('d-M-Y', strtotime($news->news_date))}}, {{date("h:i A", strtotime($news->news_time))}}</a>
                                                             </li>
                                                         </ul>
                                                         <div class="title">
@@ -327,7 +327,7 @@
                                                                 @php
                                                                     $cat_array = json_decode($news->category);
                                                                 @endphp
-                                                                {{-- <a href="{{route($cat_array[0],[$news->news_slug])}}" class="btn-link">{{$news->news_title}} </a> --}}
+                                                                <a href="{{route($cat_array[0],[$news->news_slug])}}" class="btn-link">{{$news->news_title}} </a>
                                                                 {{-- <a href="#" class="btn-link">{{$news->news_title}} </a> --}}
                                                             </h3>
                                                         </div>
