@@ -17,7 +17,7 @@
                 @if($route == "news")
                     <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
                 @else
-                    {{-- <li class="breadcrumb-item current"><a href="{{route('news.'.$route)}}">{{ucfirst($route)}}</a></li> --}}
+                    <li class="breadcrumb-item current"><a href="{{route('news.'.$route)}}">{{ucfirst($route)}}</a></li>
                 @endif
             @endforeach
         </ol>
@@ -35,7 +35,7 @@
                             <div class="list--widget list--widget-2">
                                 <div class="post--items post--items-3">
                                     <ul class="nav" data-ajax-content="inner">
-                                        {{-- @foreach ($trending as $news)
+                                        @foreach ($trending as $news)
                                         <li>
                                             <div class="post--item post--layout-3">
                                                 <div class="post--img">
@@ -53,7 +53,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        @endforeach --}}
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                                     @include('layouts.front.image-video-show', $news = $news)
                                                 </div>
                                             </div>
-                                            {{-- <div class="col-md-8 col-sm-12 col-xs-8 col-xxs-12">
+                                            <div class="col-md-8 col-sm-12 col-xs-8 col-xxs-12">
                                                 <div class="post--info">
                                                     <ul class="nav meta">
                                                         <li>
@@ -92,7 +92,7 @@
                                                     <p>{!!text_rank($news->description)!!}...</p>
                                                 </div>
                                                 @endif
-                                            </div> --}}
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
@@ -100,7 +100,7 @@
                             </ul>
                         </div>
                         @endforeach
-                        {{-- {{$all_news->links()}} --}}
+                        {{$all_news->links()}}
                     </div>
                 </div>
                 <div class="main--sidebar col-md-3 col-sm-5 ptop--30 pbottom--30" data-sticky-content="true"
@@ -116,7 +116,7 @@
                                         @include('layouts.front.image-video-show', $news = $news)
                                         <div class="name">
                                             <h3 class="h4">
-                                                {{-- <a href="{{route($slug,[$news->news_slug])}}" class="btn-link">{{$news->news_title}}..</a> --}}
+                                                <a href="{{route($slug,[$news->news_slug])}}" class="btn-link">{{$news->news_title}}..</a>
                                             </h3>
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@
                                         @include('layouts.front.image-video-show', $news = $news)
                                         <div class="name">
                                             <h3 class="h4">
-                                                {{-- <a href="{{route($slug,[$news->news_slug])}}" class="btn-link">{{$news->news_title}}..</a> --}}
+                                                <a href="{{route($slug,[$news->news_slug])}}" class="btn-link">{{$news->news_title}}..</a>
                                             </h3>
                                         </div>
                                     </div>
