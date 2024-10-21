@@ -66,6 +66,25 @@
             </a>
         </li>
 
+        <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('admin.message') ? 'active' : '' }}" href="{{route('admin.message')}}">
+                <span class="nav-icon">
+                    <i class="bi bi-bell"></i> <!-- Bootstrap bell icon -->
+                </span>
+                @php
+                    $read_count = DB::table('contact_messages')->where('is_read',0)->count();
+                @endphp
+                <span class="nav-link-text">
+                    Messages
+                    @if ($read_count > 0 )
+                        <span class="badge bg-danger">{{$read_count}}</span>
+                    @endif
+                </span>
+            </a>
+        </li>
+
+
+   {{-- 015010082179 --}}
 
         {{-- <li class="nav-item has-submenu">
             <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse"

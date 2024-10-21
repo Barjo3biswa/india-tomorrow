@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactMessage;
 use App\Models\newsContent;
 use App\Models\newsSection;
 use Illuminate\Http\Request;
@@ -306,6 +307,11 @@ class HomeController extends Controller
 
     public function createAdd(){
         return view('admin.create-adv');
+    }
+
+    public function message(){
+        $message = ContactMessage::orderBy('id','Desc')->paginate(50);
+        return view('admin.message',compact('message'));
     }
 
 }
