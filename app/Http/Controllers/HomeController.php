@@ -302,8 +302,8 @@ class HomeController extends Controller
     }
 
     public function advertisement(){
-        // dd('ok');
-        return view('admin.adv-list');
+        $list=Advertise::get();
+        return view('admin.adv-list',compact('list'));
     }
 
     public function createAdd(){
@@ -349,18 +349,22 @@ class HomeController extends Controller
         return view('admin.create-adv', compact('record','news_content'));
     }
     public function settingsStoreAd(Request $request){
+        // dd($request->all());
         DB::beginTransaction();
         try{
+            $status = $request['publish']=='true'?'Published':'Unpublished';
             $data = [
                 'news_ids' =>   $request['news_ids']=="[]"?null:$request['news_ids'],
                 'is_main_page' =>  $request['is_main_page'],
                 'in_specific_news' =>  $request['in_specific_news'],
                 'is_all_news'  => $request['is_all_news'],
-                'status'=>$request['publish'],
+                'status'=>$status,
             ];
+
             Advertise::where('id',$request->settings_id)->update($data);
             $msg = "Changed Successfully";
             DB::commit();
+            dd($data);
             return response(['success' => $msg]);
         }catch(\Exception $e){
             dd($e);

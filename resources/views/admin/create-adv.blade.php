@@ -70,30 +70,30 @@
                                         <meta name="csrf-token" content="{{ csrf_token() }}">
                                         <input type="hidden" id="settings_id" name="settings_id" value="{{$record->id}}">
                                         <div class="form-check form-switch mb-3">
-                                            <input class="form-check-input settings" type="checkbox" id="is_main_page" name="is_main_page" {{$record->is_main_page==1?'checked':''}}>
+                                            <input class="form-check-input settings" type="checkbox" id="is_main_page" name="is_main_page" {{$record->is_main_page=='true'?'checked':''}}>
                                             <label class="form-check-label" for="settings-switch-1">Appear in Main Page</label>
                                         </div>
                                         <div class="form-check form-switch mb-3">
-                                            <input class="form-check-input settings" type="checkbox" id="is_all_news" name="is_all_news" {{$record->is_all_news==1?'checked':''}}>
+                                            <input class="form-check-input settings" type="checkbox" id="is_all_news" name="is_all_news" {{$record->is_all_news=='true'?'checked':''}}>
                                             <label class="form-check-label" for="settings-switch-1">Appear in All News</label>
                                         </div>
                                         <div class="form-check form-switch mb-3">
-                                            <input class="form-check-input settings" type="checkbox" id="in_specific_news" name="in_specific_news" {{$record->in_specific_news==1?'checked':''}}>
+                                            <input class="form-check-input settings" type="checkbox" id="in_specific_news" name="in_specific_news" {{$record->in_specific_news=='true'?'checked':''}}>
                                             <label class="form-check-label" for="settings-switch-1">Appear in Specific News</label>
                                         </div>
                                         <div class="row">
                                             <label for="setting-input-2" class="form-label">Add to News</label>
                                             <select class="js-example-basic-multiple settings" id="news_ids" name="news_ids[]" multiple="multiple" >
-                                                {{-- @php
-                                                    $array = json_decode($record->category)??[];
-                                                @endphp --}}
+                                                @php
+                                                    $array = json_decode($record->news_ids)??[];
+                                                @endphp
                                                 @foreach ($news_content as $sec)
-                                                    <option value="{{$sec->id}}" {{-- {{in_array($sec->slug, $array)?'selected':''}} --}}>{{$sec->news_title}}</option>
+                                                    <option value="{{$sec->id}}" {{in_array($sec->id, $array)?'selected':''}}>{{$sec->news_title}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                         <div class="form-check form-switch mb-3">
-                                            <input class="form-check-input settings" type="checkbox" id="publish" name="publish" {{$record->publish=='publish'?'checked':''}}>
+                                            <input class="form-check-input settings" type="checkbox" id="publish" name="publish" {{$record->status=='Published'?'checked':''}}>
                                             <label class="form-check-label" for="settings-switch-1">Publish</label>
                                         </div>
                                     </form>
@@ -116,7 +116,7 @@
  <script>
     $(".settings").change(function(e){
     e.preventDefault();
-        alert("ok");
+        // alert("ok");
         var data = {
             'settings_id': $("#settings_id").val(),
             'news_ids': JSON.stringify($("#news_ids").val()),
