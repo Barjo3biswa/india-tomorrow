@@ -61,3 +61,7 @@ Route::post('/settings-store', [App\Http\Controllers\HomeController::class, 'set
 Route::get('/advertisement', [App\Http\Controllers\HomeController::class, 'advertisement'])->name('admin.advertisement');
 Route::get('/create-add', [App\Http\Controllers\HomeController::class, 'createAdd'])->name('admin.create-add');
 Route::get('/message', [App\Http\Controllers\HomeController::class, 'message'])->name('admin.message');
+
+Route::post('/save-advertise', [App\Http\Controllers\HomeController::class, 'saveAdd'])->name('admin.save-advertise');
+Route::get('/advertise-edit/{id}', [App\Http\Controllers\HomeController::class, 'addEdit'])->name('admin.advertise-edit');
+Route::post('/add-settings-store', [App\Http\Controllers\HomeController::class, 'settingsStoreAd'])->name('admin.add-settings-store');

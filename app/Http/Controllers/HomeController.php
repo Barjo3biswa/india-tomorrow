@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Advertise;
 use App\Models\ContactMessage;
 use App\Models\newsContent;
 use App\Models\newsSection;
@@ -307,6 +308,65 @@ class HomeController extends Controller
 
     public function createAdd(){
         return view('admin.create-adv');
+    }
+
+    public function saveAdd(Request $request){
+
+        if(!$request->editable_id && $request->file == null){
+            return redirect()->back()->with('error','Provide Image for this Advertise')->withInput();;
+        }
+
+        $path = null;
+        if($request->editable_id){
+            $path = newsContent::where('id',$request->editable_id)->first()->image;
+        }
+
+        $path = null;
+        if(isset($request->file)){
+            $destinationPath = public_path('uploads/ad-images');
+                $uploaded_photo =$request->file;
+                $uploaded_photo_name = date('YmdHis').".". $uploaded_photo->getClientOriginalExtension();
+                $uploaded_photo->move($destinationPath . "/", $uploaded_photo_name);
+            $path = 'uploads/ad-images/'.$uploaded_photo_name;
+        }
+        $data=[
+            'title' => $request->title,
+            'file'  => $path,
+        ];
+        // dd($data);
+        $inserted=Advertise::create($data);
+        return redirect()->route('admin.advertise-edit',Crypt::encrypt($inserted->id))->with('success','successfully Created Advertises.');
+    }
+
+    public function addEdit($id){
+        try {
+            $decrypted = Crypt::decrypt($id);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error','Error');
+        }
+        $record = Advertise::where('id',$decrypted)->first();
+        $news_content = newsContent::get();
+        return view('admin.create-adv', compact('record','news_content'));
+    }
+    public function settingsStoreAd(Request $request){
+        DB::beginTransaction();
+        try{
+            $data = [
+                'news_ids' =>   $request['news_ids']=="[]"?null:$request['news_ids'],
+                'is_main_page' =>  $request['is_main_page'],
+                'in_specific_news' =>  $request['in_specific_news'],
+                'is_all_news'  => $request['is_all_news'],
+                'status'=>$request['publish'],
+            ];
+            Advertise::where('id',$request->settings_id)->update($data);
+            $msg = "Changed Successfully";
+            DB::commit();
+            return response(['success' => $msg]);
+        }catch(\Exception $e){
+            dd($e);
+            return response(['error' => 'try again']);
+            DB::rollback();
+        }
     }
 
     public function message(){
